@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        p:first-child::before{
-            content: "This is a fancy orange box.";
-  background-color: #FFBA10;
-  border-color: black;
-  border-style: dotted;
-
+     
+span{
+    display: block;
+}
+    
+        p:first-line{
+            color:greenyellow;
+        }
+        div > p + span::first-line{
+            color: blue;
+        }
+        span::first-line{
+            color: red;
         }
     </style>
 </head>
@@ -28,6 +35,19 @@
     <p>
         This module sets the stage, getting you used to important concepts and syntax such as looking at applying HTML to text, how to create hyperlinks, and how to use HTML to structure a web page.
     </p>
+
+
+    <di>
+        <p></p>
+        <span>
+            This module sets the stage, getting you used to important concepts and syntax such as looking at applying HTML to text, how to create hyperlinks, and how to use HTML to structure a web page.
+        </span>
+    </di>
+<br>
+<br>
+    <span>
+        This module sets the stage, getting you used to important concepts and syntax such as looking at applying HTML to text, how to create hyperlinks, and how to use HTML to structure a web page.
+    </span>
 </h3>
 </body>
 </html>
