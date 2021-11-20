@@ -1,0 +1,39 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        document.addEventListener("DOMContentLoaded",boxFunction);
+        function boxFunction()
+        {
+            let x=30,y=10;
+            x=80;
+            y=80;
+          
+            const box1= document.querySelector("#canvas");
+            const ctx= box1.getContext('2d');
+            
+            ctx.fillStyle = 'green';
+            ctx.fillRect(10, 10, x, y);
+            
+    
+            
+        
+
+    
+
+            
+        }
+    </script>
+</head>
+<body>
+   
+   
+    <canvas id="canvas"></canvas>
+      
+
+</body>
+</html>
