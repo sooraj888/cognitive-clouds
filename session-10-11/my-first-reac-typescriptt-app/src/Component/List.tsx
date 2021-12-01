@@ -1,14 +1,25 @@
+const List = ({ STories }: any) => (
+  <>
+    <div className="elementHedding">
+      <span>Title</span>
+      <span>URL</span>
+      <span>Author</span>
+    </div>
 
-const List= (prps:any)=>(
-  <div>
-    {
-        prps.stories.map((element: any) => (
-        <div >
-            <span>{element.title}</span>
-           <span>{element.url}</span>
-           <span>{element.author}</span>
-        </div>
-    ))
-    }
-</div>);
+    {STories.map((item: any) => (
+      <Item key={item.objectID} item={item} />
+    ))}
+  </>
+);
+
+const Item = ({ item }: any) => {
+  return (
+    <div>
+      <span>{item.title}</span>
+      <span>{item.url}</span>
+      <span>{item.author}</span>
+    </div>
+  );
+};
+
 export default List;
