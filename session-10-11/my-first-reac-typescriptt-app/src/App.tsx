@@ -1,7 +1,7 @@
 import "./App.css";
 import List from "./Component/List";
 import InputWithLable from "./Component/InputWithLable";
-
+import { useEffect, useState } from "react";
 import useSemiPersistenceState from "./hooks/useSemiPersistenceState";
 
 const list = [
@@ -16,7 +16,7 @@ const list = [
   {
     title: "Redux",
     url: "https://redux.js.org/",
-    author: "Dan Abramov, Andrew Clark",
+    author: "Dan Abramov",
     num_comments: 2,
     points: 5,
     objectID: 1,
@@ -24,7 +24,7 @@ const list = [
   {
     title: "Learn React",
     url: "https://redux.js.org/",
-    author: "Dan Abramov, Andrew Clark",
+    author: "Dan Abramov",
     num_comments: 2,
     points: 5,
     objectID: 2,
@@ -32,18 +32,31 @@ const list = [
 ];
 
 function App() {
+  const getAsyncStoreis = Promise.resolve({ data: { stories: list } });
+
+  const [stories, setStoreis] = useState(list);
+
   const [searchedTearm, setSerchedTearm] = useSemiPersistenceState(
     "",
     "searchedTearm"
   );
 
+  useEffect(() => {
+    getAsyncStoreis.then((resul) => console.log("result is :", resul));
+  }, []);
+
   const searchHnadler = (e: any) => {
     setSerchedTearm(e.target.value);
   };
 
-  const filterdList: any = list.filter((item: any) => {
-    return item.title.includes(searchedTearm);
+  const filterdList: any = stories.filter((item: any) => {
+    return item.title.toUpperCase().includes(searchedTearm.toUpperCase());
   });
+
+  const handelRemoveStory = (id: any) => {
+    const newStories = stories.filter((item) => item.objectID !== id);
+    setStoreis(newStories);
+  };
 
   return (
     <div className="container">
@@ -53,11 +66,12 @@ function App() {
         id="search"
         value={searchedTearm}
         onChange={searchHnadler}
+        autoFocus={true}
       >
         <b> Search</b>
       </InputWithLable>
 
-      <List STories={filterdList} />
+      <List STories={filterdList} onRemove={handelRemoveStory} />
     </div>
   );
 }
