@@ -32,17 +32,30 @@ const list = [
 ];
 
 function App() {
-  const getAsyncStoreis = Promise.resolve({ data: { stories: list } });
-
-  const [stories, setStoreis] = useState(list);
+  const [stories, setStoreis] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState(false);
 
   const [searchedTearm, setSerchedTearm] = useSemiPersistenceState(
     "",
     "searchedTearm"
   );
+  const getAsyncStoreis = new Promise((res, rej) =>
+    setTimeout(() => rej({ data: { stories: list } }), 2000)
+  );
+  //Promise.resolve({ data: { stories: list } });  setLoading(false);
 
   useEffect(() => {
-    getAsyncStoreis.then((resul) => console.log("result is :", resul));
+    setLoading(true);
+    getAsyncStoreis
+      .then((result: any) => {
+        setLoading(false);
+        setStoreis(result.data.stories);
+      })
+      .catch(() => {
+        setLoading(false);
+        setError(true);
+      });
   }, []);
 
   const searchHnadler = (e: any) => {
@@ -54,7 +67,7 @@ function App() {
   });
 
   const handelRemoveStory = (id: any) => {
-    const newStories = stories.filter((item) => item.objectID !== id);
+    const newStories = stories.filter((item: any) => item.objectID !== id);
     setStoreis(newStories);
   };
 
@@ -68,10 +81,14 @@ function App() {
         onChange={searchHnadler}
         autoFocus={true}
       >
-        <b> Search</b>
+        Search
       </InputWithLable>
-
-      <List STories={filterdList} onRemove={handelRemoveStory} />
+      {isLoading ? (
+        <p>loading..</p>
+      ) : (
+        <List STories={filterdList} onRemove={handelRemoveStory} />
+      )}
+      {isError && <p>somthing went wrong...</p>}
     </div>
   );
 }
