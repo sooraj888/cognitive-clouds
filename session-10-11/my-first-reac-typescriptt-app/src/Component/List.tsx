@@ -1,6 +1,7 @@
+import styles from "./List.module.css";
 const List = ({ STories, onRemove }: any) => (
   <>
-    <div className="elementHedding">
+    <div className={styles.elementHedding}>
       <span>Title</span>
       <span>URL</span>
       <span>Author</span>
@@ -14,12 +15,18 @@ const List = ({ STories, onRemove }: any) => (
 
 const Item = ({ item, onDelete }: any) => {
   return (
-    <div>
-      <span>{item.title}</span>
-      <span>{item.url}</span>
-      <span>{item.author}</span>
-
-      <button onClick={() => onDelete(item.objectID)}>Remove</button>
+    <div className={styles.ietmBackground}>
+      <span className={styles.itemTitle}>{item.title}</span>
+      <span className={styles.url}>{item.url}</span>
+      <span className={styles.author}>{item.author}</span>
+      <span className={styles.buttonHolder}>
+        <button
+          className={styles.remBtn}
+          onClick={() => onDelete(item.objectID)}
+        >
+          Remove
+        </button>
+      </span>
     </div>
   );
 };

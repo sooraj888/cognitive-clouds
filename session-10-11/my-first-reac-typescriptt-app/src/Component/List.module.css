@@ -1,0 +1,38 @@
+span {
+  display: inline-block;
+  margin-right: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 250px;
+  margin-left: 3rem;
+}
+
+.itemTitle,
+.url {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.itemTitle {
+  font-weight: bold;
+}
+
+.remBtn {
+  background-color: red;
+  color: white;
+  border: 1px solid bli;
+}
+.ietmBackground {
+  background-color: peachpuff;
+}
+.elementHedding {
+  background-color: rgb(185, 78, 78);
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.ietmBackground {
+  border: 1px solid white;
+}

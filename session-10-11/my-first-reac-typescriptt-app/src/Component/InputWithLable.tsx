@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-
 const Search = ({ onChange, value, children, id, autoFocus = false }: any) => {
   const handelChange = (e: any) => {
     onChange(e);
