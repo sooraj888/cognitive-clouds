@@ -1,8 +1,9 @@
 import "./App.css";
 import List from "./Component/List";
 import InputWithLable from "./Component/InputWithLable";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import useSemiPersistenceState from "./hooks/useSemiPersistenceState";
+import { type } from "os";
 
 const list = [
   {
@@ -29,32 +30,62 @@ const list = [
     points: 5,
     objectID: 2,
   },
+  {
+    title: "Demo React",
+    url: "https://redux.js.org/",
+    author: "Dan Abramov",
+    num_comments: 2,
+    points: 5,
+    objectID: 3,
+  },
 ];
 
+const storyReducer = (state: any, action: any) => {
+  switch (action.type) {
+    case "SET_STORYIES":
+      return { data: action.payload, isLoading: false, isError: false };
+
+    case "Remove_STORY": {
+      const showUpdatedStories = state.data.filter(
+        (item: any) => item.objectID !== action.payload
+      );
+      return { data: showUpdatedStories, isLoading: false, isError: false };
+    }
+    case "Fetch_INIT": {
+      return { ...state, isLoading: true, isError: false };
+    }
+    case "FEATCH_STORIES_FAILED": {
+      return { ...state, isLoading: false, isError: true };
+    }
+    default:
+      return state;
+  }
+};
+
 function App() {
-  const [stories, setStoreis] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [isError, setError] = useState(false);
+  const [stories, dispatchStoreis] = useReducer(storyReducer, {
+    data: [],
+    isLoading: false,
+    isError: false,
+  });
 
   const [searchedTearm, setSerchedTearm] = useSemiPersistenceState(
     "",
     "searchedTearm"
   );
   const getAsyncStoreis = new Promise((res, rej) =>
-    setTimeout(() => rej({ data: { stories: list } }), 2000)
+    setTimeout(() => res({ data: { stories: list } }), 2000)
   );
-  //Promise.resolve({ data: { stories: list } });  setLoading(false);
 
   useEffect(() => {
-    setLoading(true);
+    dispatchStoreis({ type: "Fetch_INIT" });
+
     getAsyncStoreis
       .then((result: any) => {
-        setLoading(false);
-        setStoreis(result.data.stories);
+        dispatchStoreis({ type: "SET_STORYIES", payload: result.data.stories });
       })
       .catch(() => {
-        setLoading(false);
-        setError(true);
+        dispatchStoreis({ type: "FEATCH_STORIES_FAILED" });
       });
   }, []);
 
@@ -62,13 +93,12 @@ function App() {
     setSerchedTearm(e.target.value);
   };
 
-  const filterdList: any = stories.filter((item: any) => {
+  const filterdList: any = stories.data.filter((item: any) => {
     return item.title.toUpperCase().includes(searchedTearm.toUpperCase());
   });
 
   const handelRemoveStory = (id: any) => {
-    const newStories = stories.filter((item: any) => item.objectID !== id);
-    setStoreis(newStories);
+    dispatchStoreis({ type: "Remove_STORY", payload: id });
   };
 
   return (
@@ -83,12 +113,12 @@ function App() {
       >
         Search
       </InputWithLable>
-      {isLoading ? (
+      {stories.isLoading ? (
         <p>loading..</p>
       ) : (
         <List STories={filterdList} onRemove={handelRemoveStory} />
       )}
-      {isError && <p>somthing went wrong...</p>}
+      {stories.isError && <p>somthing went wrong...</p>}
     </div>
   );
 }
