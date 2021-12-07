@@ -36,3 +36,7 @@ span {
 .ietmBackground {
   border: 1px solid white;
 }
+
+.url :hover {
+  color: rgb(255, 255, 255);
+}

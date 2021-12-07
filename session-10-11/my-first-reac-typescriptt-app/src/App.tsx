@@ -1,10 +1,13 @@
 import "./App.css";
 import List from "./Component/List";
 import InputWithLable from "./Component/InputWithLable";
-import { useEffect, useReducer } from "react";
+import { useCallback, useEffect, useReducer, useState } from "react";
 import useSemiPersistenceState from "./hooks/useSemiPersistenceState";
+import axios from "axios";
+import SearchForm from "./Component/SearchForm";
 
 const storyReducer = (state: any, action: any) => {
+  console.log("action from useReducer", action);
   switch (action.type) {
     case "SET_STORYIES":
       return { data: action.payload, isLoading: false, isError: false };
@@ -28,6 +31,7 @@ const storyReducer = (state: any, action: any) => {
 const API_END_POINT = "https://hn.algolia.com/api/v1/search?query=";
 
 function App() {
+  const [url, setUrl] = useState(API_END_POINT);
   const [stories, dispatchStoreis] = useReducer(storyReducer, {
     data: [],
     isLoading: false,
@@ -39,21 +43,28 @@ function App() {
     "searchedTearm"
   );
 
-  useEffect(() => {
+  const handleFetchStories = useCallback(async () => {
     dispatchStoreis({ type: "Fetch_INIT" });
+    try {
+      const responce = await axios.get(url);
+      dispatchStoreis({ type: "SET_STORYIES", payload: responce.data.hits });
+    } catch (e) {
+      dispatchStoreis({ type: "FEATCH_STORIES_FAILED" });
+    }
+  }, [url]);
 
-    fetch(API_END_POINT + searchedTearm)
-      .then((r) => r.json())
-      .then((result: any) => {
-        dispatchStoreis({ type: "SET_STORYIES", payload: result.hits });
-      })
-      .catch((e) => {
-        console.log(e);
-        dispatchStoreis({ type: "FEATCH_STORIES_FAILED" });
-      });
-  }, [searchedTearm]);
+  useEffect(() => {
+    handleFetchStories();
+  }, [handleFetchStories]);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setUrl(API_END_POINT + searchedTearm);
+  };
 
   const searchHnadler = (e: any) => {
+    console.log("SASDD", e);
+
     setSerchedTearm(e.target.value);
   };
 
@@ -64,15 +75,11 @@ function App() {
   return (
     <div className="container">
       <h1>{getTitle()}</h1>
-
-      <InputWithLable
-        id="search"
-        value={searchedTearm}
-        onChange={searchHnadler}
-        autoFocus={true}
-      >
-        Search
-      </InputWithLable>
+      <SearchForm
+        onSearch={searchHnadler}
+        onSubmit={handleSubmit}
+        searchedTearm={searchedTearm}
+      ></SearchForm>
       {stories.isLoading ? (
         <p>loading..</p>
       ) : (

@@ -17,7 +17,9 @@ const Item = ({ item, onDelete }: any) => {
   return (
     <div className={styles.ietmBackground}>
       <span className={styles.itemTitle}>{item.title}</span>
-      <span className={styles.url}>{item.url}</span>
+      <span className={styles.url}>
+        <a href={item.url}>{item.url}</a>
+      </span>
       <span className={styles.author}>{item.author}</span>
       <span className={styles.buttonHolder}>
         <button
