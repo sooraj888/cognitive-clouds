@@ -1,7 +1,13 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import InputWithLable from "./InputWithLable";
 
-const SearchForm = ({ onSubmit, searchedTearm, onSearch }: any) => {
+type SearchFormProp = {
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  onSearch: (e: ChangeEvent<HTMLInputElement>) => void;
+  searchedTearm: any;
+};
+
+const SearchForm = ({ onSubmit, searchedTearm, onSearch }: SearchFormProp) => {
   return (
     <form onSubmit={onSubmit}>
       <InputWithLable

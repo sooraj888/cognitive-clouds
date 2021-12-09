@@ -1,19 +1,43 @@
 import styles from "./List.module.css";
-const List = ({ STories, onRemove }: any) => (
-  <>
-    <div className={styles.elementHedding}>
-      <span>Title</span>
-      <span>URL</span>
-      <span>Author</span>
-    </div>
+import { memo } from "react";
 
-    {STories.map((item: any) => (
-      <Item key={item.objectID} item={item} onDelete={onRemove} />
-    ))}
-  </>
-);
+type ListProp = {
+  STories: Stories;
+  onRemove: (id: string) => void;
+};
 
-const Item = ({ item, onDelete }: any) => {
+type Story = {
+  title: string;
+  url: string;
+  objectID: string;
+  author: string;
+  num_comments: string;
+};
+
+export type Stories = Array<Story>;
+
+type ItemProp = {
+  item: Story;
+  onDelete: (id: string) => void;
+};
+
+const List = memo(({ STories, onRemove }: ListProp) => {
+  // console.log(STories);
+  return (
+    <>
+      <div className={styles.elementHedding}>
+        <span>Title</span>
+        <span>URL</span>
+        <span>Author</span>
+      </div>
+
+      {STories.map((item: any) => (
+        <Item key={item.objectID} item={item} onDelete={onRemove} />
+      ))}
+    </>
+  );
+});
+const Item = ({ item, onDelete }: ItemProp) => {
   return (
     <div className={styles.ietmBackground}>
       <span className={styles.itemTitle}>{item.title}</span>
