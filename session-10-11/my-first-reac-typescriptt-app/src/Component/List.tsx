@@ -58,3 +58,4 @@ const Item = ({ item, onDelete }: ItemProp) => {
 };
 
 export default List;
+export { Item };

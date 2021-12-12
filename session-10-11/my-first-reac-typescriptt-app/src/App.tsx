@@ -24,7 +24,7 @@ type StoriesAction = {
   payload?: any;
 };
 
-const storyReducer = (state: StoriesState, action: StoriesAction) => {
+export const storyReducer = (state: StoriesState, action: StoriesAction) => {
   //console.log("action from useReducer", action);
   switch (action.type) {
     case "SET_STORYIES":
