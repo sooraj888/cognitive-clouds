@@ -1,0 +1,21 @@
+.containerTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 80%;
+  background-color: rgb(95, 224, 95);
+}
+
+.containerBody {
+  background-color: rgb(255, 159, 15);
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.addButton {
+  color: white;
+  background-color: inherit;
+  margin: 22px 0px;
+  border-color: white;
+}
