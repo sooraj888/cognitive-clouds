@@ -4,20 +4,19 @@ import s from "../Components/Container.module.css";
 import TodoList from "./TodoList";
 
 function Container() {
-  let jsonObj;
   let textod =
     '{ "employees" : [' +
     '{ "firstName":"John" , "lastName":"Doe" },' +
     '{ "firstName":"Anna" , "lastName":"Smith" },' +
     '{ "firstName":"Peter" , "lastName":"Jones" },' +
-    '{"dsa":"ads"} ]}';
+    '{ "firstName":"Peter" , "lastName":"Jones" },' +
+    '{"firstName":"Peter" , "lastName":"Jones"} ]}';
 
   let storageValue = localStorage.getItem("names");
+  let jsonObj = JSON.parse(textod).employees;
+  localStorage.setItem("names", JSON.stringify(jsonObj));
 
   const handleAddTodoBtn = (e: any) => {
-    jsonObj = JSON.parse(textod).employees;
-
-    localStorage.setItem("names", JSON.stringify(jsonObj));
     console.log("json obj sdaadasd", jsonObj);
 
     // let jsO = JSON.parse("storageValue");
@@ -34,9 +33,6 @@ function Container() {
       </div>
       {/* Todo-list  */}
       <TodoList jsonObj={jsonObj} prop="this is from container "></TodoList>
-
-      <div className={s.containerBody}>ggfdg </div>
-      <div className={s.containerBody}>{storageValue} </div>
     </div>
   );
 }
