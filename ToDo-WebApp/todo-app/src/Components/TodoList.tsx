@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Components/TodoList.module.css"
-const TodoList = () => {
+const TodoList = ({sad}:any) => {
   const arr = ["sa", "asd", "bb", "cc", "dd"];
 
   return (

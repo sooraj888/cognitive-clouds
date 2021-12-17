@@ -2,11 +2,25 @@ import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import s from "../Components/Container.module.css";
 import TodoList from "./TodoList";
-import { FaxRounded } from "@mui/icons-material";
 
 function Container() {
+  let textod;
+  let jsonObj;
+  let objJson;
   const handleAddTodoBtn = (e: any) => {
-    console.log("clicking");
+    localStorage.setItem("rememberMe", "jsonObjad");
+    textod =
+      '{ "employees" : [' +
+      '{ "firstName":"John" , "lastName":"Doe" },' +
+      '{ "firstName":"Anna" , "lastName":"Smith" },' +
+      '{ "firstName":"Peter" , "lastName":"Jones" },' +
+      '{"dsa":"ads"} ]}';
+    jsonObj = JSON.parse(textod);
+
+   
+    console.log("json obj", jsonObj.employees);
+    objJson = jsonObj.employees;
+    localStorage.setItem("names", JSON.stringify(objJson));
   };
 
   return (
@@ -19,7 +33,7 @@ function Container() {
         <h1 className={s.titleOfComponent}>Todo List</h1>
       </div>
       {/* Todo-list  */}
-      <TodoList></TodoList>
+      <TodoList jsonObj={objJson}></TodoList>
       <div>isdfs</div>
     </div>
   );
