@@ -12,14 +12,12 @@ function Container() {
     '{ "firstName":"Peter" , "lastName":"Jones" },' +
     '{"firstName":"Peter" , "lastName":"Jones"} ]}';
 
-  let storageValue = localStorage.getItem("names");
   let jsonObj = JSON.parse(textod).employees;
+  console.log("107", JSON.parse(textod));
   localStorage.setItem("names", JSON.stringify(jsonObj));
 
   const handleAddTodoBtn = (e: any) => {
-    console.log("json obj sdaadasd", jsonObj);
-
-    // let jsO = JSON.parse("storageValue");
+    console.log("105 json obj sdaadasd", jsonObj);
   };
 
   return (
@@ -32,7 +30,7 @@ function Container() {
         <h1 className={s.titleOfComponent}>Todo List</h1>
       </div>
       {/* Todo-list  */}
-      <TodoList jsonObj={jsonObj} prop="this is from container "></TodoList>
+      <TodoList jsonObj={jsonObj}></TodoList>
     </div>
   );
 }
