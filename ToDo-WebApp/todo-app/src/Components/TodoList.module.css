@@ -11,11 +11,11 @@
   
 }
 
+/* togling */
 
+/*   
 
-  
-/* toggle in label designing */
-/* .toggle {
+.toggle {
   position : relative ;
   display : inline-block;
   width : 50px;
@@ -24,9 +24,9 @@
   border-radius: 28px;
   border: 2px solid gray;
 }
-       */
-/* After slide changes */
-/* .toggle:after {
+      
+
+.toggle:after {
   content: '';
   position: absolute;
   width: 25px;
@@ -37,19 +37,19 @@
   left: 1px;
   transition:  all 0.5s;
 }
-       */
-
-/* Checkbox checked effect */
-/* .checkbox:checked + .toggle::after {
-  left : 24px; 
-} */
       
-/* Checkbox checked toggle label bg color */
-/* .checkbox:checked + .toggle {
+
+
+.checkbox:checked + .toggle::after {
+  left : 24px; 
+}
+      
+
+.checkbox:checked + .toggle {
   background-color:rgb(24, 255, 24);
 }
-       */
-/* Checkbox vanished */
-/* .checkbox { 
+      
+
+.checkbox { 
   display : none;
 } */
