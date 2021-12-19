@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../Components/TodoList.module.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const TodoList = () => {
   let data: any;
   let data2: any = localStorage.getItem("data");
-
-  // if (data == null) {
-  //   data = JSON.parse('[{"sad":"asaaa"},{"sad":"sa"}]');
-  // }
+  const [datafromLocalstorage, setdatafromLocalstorage] = useState(
+    localStorage.getItem("data")
+  );
   if (data2.length === 0) {
     data = JSON.parse("[]");
   } else {
@@ -29,7 +28,7 @@ const TodoList = () => {
                 /> */}
                 <label htmlFor="switch" className={styles.toggle} />
               </span>
-              {items?.sad}
+              <input value={items?.title} onChange={(e) => ""}></input>
               <span>
                 <button className={styles.deleteButton}>
                   <DeleteIcon></DeleteIcon>
