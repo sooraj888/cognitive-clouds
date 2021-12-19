@@ -6,36 +6,29 @@ import { json } from "node:stream/consumers";
 
 function Container() {
   let data: any;
+  let data2: any;
   if (localStorage.getItem("data") == null) {
     localStorage.setItem("data", JSON.parse("[]"));
+  } else {
+    data = localStorage.getItem("data");
   }
 
   const handleAddTodoBtn = () => {
-    console.log("hi");
-    data = localStorage.getItem("data");
-    console.log("data fetch", data);
-    console.log("17 fson parsed data", data);
+    data2 = localStorage.getItem("data");
 
-    data = JSON.parse('[{"sad":"asaaa1"},{"sad":"sa2"}]');
-
-    
-
-
-
-    // for (let i = 0; i < data.length; i++) {
-    //   console.log("data is", data[i]);
-    // }
-
-    //' + JSON.stringify(data) + '
-    // data[data.length] = JSON.parse('{"sad":"sda3"}');
-    // data[data.length] = JSON.parse('{"sad":"sdadsfs4"}');
-    // data[data.length] = JSON.parse('{"sad":"sda5"}');
+    console.log("data from localSttroage", data);
 
     localStorage.setItem("data", JSON.stringify(data));
 
-    console.log("data 111", localStorage.getItem("data"));
+    if (data.length == 0) {
+      data = JSON.parse("[]");
+    } else {
+      data = JSON.parse(data2);
+      console.log(JSON.parse(data2));
+    }
 
-    console.log("109-11:54am", data);
+    data[data.length] = JSON.parse('{"sad":"sda3"}');
+    localStorage.setItem("data", JSON.stringify(data));
 
     // for (let i = 0; i < data.length; i++) {
     //   console.log("data", data[i]);
