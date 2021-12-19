@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import s from "../Components/Container.module.css";
 import TodoList from "./TodoList";
@@ -19,8 +19,6 @@ function Container() {
     console.log(e.target.value);
     setAddingText(e.target.value);
   };
-
-  // this function handle on adding
   const handleAddTodoBtn = () => {
     data2 = localStorage.getItem("data");
 
@@ -33,7 +31,6 @@ function Container() {
     }
 
     data[data.length] = JSON.parse('{"title":"' + addingText + '"}');
-
     localStorage.setItem("data", JSON.stringify(data));
   };
   return (
@@ -45,7 +42,6 @@ function Container() {
         </button>
         <div>
           <input
-            value={addingText}
             className={s.addingTest}
             onChange={handleOnChangeAddText}
           ></input>
