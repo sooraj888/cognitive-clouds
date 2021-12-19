@@ -2,7 +2,6 @@ import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import s from "../Components/Container.module.css";
 import TodoList from "./TodoList";
-import { json } from "node:stream/consumers";
 
 function Container() {
   let data: any;
@@ -20,11 +19,10 @@ function Container() {
 
     localStorage.setItem("data", JSON.stringify(data));
 
-    if (data.length == 0) {
+    if (data.length === 0) {
       data = JSON.parse("[]");
     } else {
       data = JSON.parse(data2);
-      console.log(JSON.parse(data2));
     }
 
     data[data.length] = JSON.parse('{"sad":"sda3"}');

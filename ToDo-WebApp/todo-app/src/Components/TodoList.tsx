@@ -3,18 +3,16 @@ import styles from "../Components/TodoList.module.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const TodoList = () => {
-  let data;
-  
-  if (data == null) {
-    data = JSON.parse('[{"sad":"asaaa"},{"sad":"sa"}]');
-  }
+  let data: any;
+  let data2: any = localStorage.getItem("data");
 
-  data[data.length] = JSON.parse('{"sad":"sda"}');
-  data[data.length + 1] = JSON.parse('{"sad":"sda"}');
-  console.log("109-11:54am", data);
-
-  for (let i = 0; i < data.length; i++) {
-    console.log("data", data[i]);
+  // if (data == null) {
+  //   data = JSON.parse('[{"sad":"asaaa"},{"sad":"sa"}]');
+  // }
+  if (data2.length === 0) {
+    data = JSON.parse("[]");
+  } else {
+    data = JSON.parse(data2);
   }
 
   return (
