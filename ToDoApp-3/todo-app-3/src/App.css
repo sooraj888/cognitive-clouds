@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+.inputTodo {
+  margin: 20px;
+  padding-left: 20px;
+}
+.todoList {
+  background-color: red;
+}
