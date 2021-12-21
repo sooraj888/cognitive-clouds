@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { text } from "stream/consumers";
 import "./App.css";
 
 function App() {
-  const [isEditing, setIsEditing] = useState<any>(true);
+  const [isEditing, setIsEditing] = useState<any>(false);
 
   const [currentTodo, setCurrentTodo] = useState<any>({});
+
+  const [currentCheckedTodo, setCurrentCheckedTodo] = useState<any>({});
 
   const [todoList, setTodoList] = useState<any>(() => {
     const savedTodoList = localStorage.getItem("todoDataList");
@@ -26,7 +29,11 @@ function App() {
     if (todo !== "") {
       setTodoList([
         ...todoList,
-        { id: todoList.length + 1, text: todo.trim(), toggle: false },
+        {
+          id: todoList.length + Math.floor(Math.random() * 100000),
+          text: todo.trim(),
+          toggle: false,
+        },
       ]);
     }
     setTodo("");
@@ -41,29 +48,46 @@ function App() {
     });
     setTodoList(deletedTodoItem);
   };
-  const handleOnCheckBoxChange = (id: any) => {
-    console.log("checked", id);
+  const handleOnCheckBoxChange = (id: any) => {};
+
+  const handleEditFormSubmit = (e: any) => {
+    e.preventDefault();
+    handleUpdateTodo(currentTodo.id, currentTodo);
+    console.log("ss", currentTodo);
   };
 
-  const handleEditInputChange = (e: any) => {
+  const handleUpdateTodo = (id: any, updateTodo: any) => {
+    const updateTodoItem = todoList.map((todoItem: any) => {
+      return todoItem.id === id ? updateTodo : todoItem;
+    });
+    console.log("updateTodoItem", updateTodoItem);
+    setIsEditing(false);
+    setTodoList(updateTodoItem);
+  };
+
+  const handleEditClick = (selectedTodoItem: any) => {
+    setIsEditing(true);
+    setCurrentTodo({ ...selectedTodoItem });
+  };
+  const handleEditInputchange = (e: any) => {
     setCurrentTodo({ ...currentTodo, text: e.target.value });
   };
-
-  const handleEditTodo = () => {};
   return (
     <div className="App">
       {isEditing ? (
         <>
-          <form onSubmit={handleEditTodo}>
+          <form onSubmit={handleEditFormSubmit}>
             <h1>Edit Todo</h1>
             <label htmlFor="editTodo">Edit Todo : </label>
             <input
-              name="editTodo"
-              placeholder="edit todo"
               type="text"
               value={currentTodo.text}
-              onChange={handleEditInputChange}
+              name="editTodo"
+              onChange={handleEditInputchange}
+              placeholder="Edit todo"
             ></input>
+            <button type="submit">Update</button>
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
           </form>
         </>
       ) : (
@@ -77,6 +101,7 @@ function App() {
               onChange={habndleInputChange}
               value={todo}
             ></input>
+            <button type="submit">Add</button>
           </form>
           <div className="todo-list">
             {todoList.map((todoItem: any) => {
@@ -88,6 +113,9 @@ function App() {
                     onChange={() => handleOnCheckBoxChange(todoItem.id)}
                   ></input>
                   {todoItem.text}
+                  <button onClick={() => handleEditClick(todoItem)}>
+                    Edit
+                  </button>
                   <button onClick={() => handleDelete(todoItem.id)}>X</button>
                 </div>
               );
