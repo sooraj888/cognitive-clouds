@@ -48,12 +48,25 @@ function App() {
     });
     setTodoList(deletedTodoItem);
   };
-  const handleOnCheckBoxChange = (id: any) => {};
+  const handleOnCheckBoxChange = (chkkedTodoItem: any) => {
+    let updatedCheckBoxTodo: any;
+    if (chkkedTodoItem.toggle) {
+      updatedCheckBoxTodo = { ...chkkedTodoItem, toggle: false };
+    } else {
+      updatedCheckBoxTodo = { ...chkkedTodoItem, toggle: true };
+    }
+    console.log("todo", updatedCheckBoxTodo);
+
+    const updatedTodoList = todoList.map((todoItem: any) => {
+      return todoItem.id === chkkedTodoItem.id ? updatedCheckBoxTodo : todoItem;
+    });
+    console.log("updated", updatedTodoList);
+    setTodoList(updatedTodoList);
+  };
 
   const handleEditFormSubmit = (e: any) => {
     e.preventDefault();
     handleUpdateTodo(currentTodo.id, currentTodo);
-    console.log("ss", currentTodo);
   };
 
   const handleUpdateTodo = (id: any, updateTodo: any) => {
@@ -109,8 +122,8 @@ function App() {
                 <div key={todoItem.id}>
                   <input
                     type="checkbox"
-                    checked={todoItem.toggle}
-                    onChange={() => handleOnCheckBoxChange(todoItem.id)}
+                    checked={todoItem?.toggle}
+                    onChange={() => handleOnCheckBoxChange(todoItem)}
                   ></input>
                   {todoItem.text}
                   <button onClick={() => handleEditClick(todoItem)}>
@@ -128,3 +141,5 @@ function App() {
 }
 
 export default App;
+
+
