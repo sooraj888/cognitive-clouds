@@ -1,10 +1,54 @@
 .App {
   text-align: center;
+  background-color: lightcoral;
+  margin: 10%;
+  padding-bottom: 10px;
 }
+
 .inputTodo {
   margin: 20px;
   padding-left: 20px;
 }
-.todoList {
-  background-color: red;
+
+.completd {
+  text-decoration: line-through;
+  color: rgb(100, 231, 100);
+}
+.incompleted {
+  color: rgb(82, 34, 0);
+}
+span {
+  min-width: 80%;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.todoElement {
+  background-color: navajowhite;
+  margin: 10px 2%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.checkBox {
+  margin-left: 1%;
+}
+div > h1 {
+  margin-bottom: 0px;
+}
+.deleteButton,
+.editButton {
+  border: none;
+  background-color: inherit;
+}
+.deleteButton :hover {
+  color: rgb(255, 0, 0);
+}
+.editButton :hover {
+  color: rgb(0, 252, 0);
+  background-color: rgb(255, 255, 255);
+}
+button {
+  margin-left: 10px;
 }

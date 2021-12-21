@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { text } from "stream/consumers";
 import "./App.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 function App() {
   const [isEditing, setIsEditing] = useState<any>(false);
 
   const [currentTodo, setCurrentTodo] = useState<any>({});
-
-  const [currentCheckedTodo, setCurrentCheckedTodo] = useState<any>({});
 
   const [todoList, setTodoList] = useState<any>(() => {
     const savedTodoList = localStorage.getItem("todoDataList");
@@ -42,7 +42,7 @@ function App() {
     setTodo(e.target.value);
   };
   const handleDelete = (id: any) => {
-    console.log(id);
+    // console.log(id);
     const deletedTodoItem = todoList.filter((todoItem: any) => {
       return todoItem.id !== id;
     });
@@ -55,12 +55,11 @@ function App() {
     } else {
       updatedCheckBoxTodo = { ...chkkedTodoItem, toggle: true };
     }
-    console.log("todo", updatedCheckBoxTodo);
 
     const updatedTodoList = todoList.map((todoItem: any) => {
       return todoItem.id === chkkedTodoItem.id ? updatedCheckBoxTodo : todoItem;
     });
-    console.log("updated", updatedTodoList);
+
     setTodoList(updatedTodoList);
   };
 
@@ -73,7 +72,7 @@ function App() {
     const updateTodoItem = todoList.map((todoItem: any) => {
       return todoItem.id === id ? updateTodo : todoItem;
     });
-    console.log("updateTodoItem", updateTodoItem);
+    // console.log("updateTodoItem", updateTodoItem);
     setIsEditing(false);
     setTodoList(updateTodoItem);
   };
@@ -100,12 +99,20 @@ function App() {
               placeholder="Edit todo"
             ></input>
             <button type="submit">Update</button>
-            <button onClick={() => setIsEditing(false)}>Cancel</button>
+            <button
+              className="cancelbutton"
+              onClick={() => setIsEditing(false)}
+            >
+              Cancel
+            </button>
           </form>
         </>
       ) : (
         <>
           <form onSubmit={handleFormOnSubmit}>
+            <div>
+              <h1>Todo List</h1>
+            </div>
             <input
               name="todo"
               type="text"
@@ -119,17 +126,31 @@ function App() {
           <div className="todo-list">
             {todoList.map((todoItem: any) => {
               return (
-                <div key={todoItem.id}>
+                <div key={todoItem.id} className="todoElement">
                   <input
                     type="checkbox"
                     checked={todoItem?.toggle}
                     onChange={() => handleOnCheckBoxChange(todoItem)}
+                    className="checkBox"
                   ></input>
-                  {todoItem.text}
-                  <button onClick={() => handleEditClick(todoItem)}>
-                    Edit
+                  {todoItem?.toggle === true ? (
+                    <span className="completd">{todoItem.text}</span>
+                  ) : (
+                    <span className="incompleted">{todoItem.text}</span>
+                  )}
+
+                  <button
+                    className="editButton"
+                    onClick={() => handleEditClick(todoItem)}
+                  >
+                    <ModeEditIcon></ModeEditIcon>
                   </button>
-                  <button onClick={() => handleDelete(todoItem.id)}>X</button>
+                  <button
+                    onClick={() => handleDelete(todoItem.id)}
+                    className="deleteButton"
+                  >
+                    <DeleteIcon></DeleteIcon>
+                  </button>
                 </div>
               );
             })}
@@ -142,4 +163,4 @@ function App() {
 
 export default App;
 
-
+//9740862131
