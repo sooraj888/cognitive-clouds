@@ -1,9 +1,21 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import App from "./App";
+import AddForm from "./componenets/AddForm";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("test 1", () => {
+  test("test 0.1", () => {
+    render(<App />);
+    screen.debug();
+    screen.getByDisplayValue("");
+  });
+});
+
+describe("test 2 on AddingTodo", () => {
+  test("test 0.1", () => {
+    render(<AddForm />);
+    screen.debug();
+    screen.getByDisplayValue("");
+    // fireEvent.change();
+  });
 });
