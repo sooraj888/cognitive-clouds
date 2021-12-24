@@ -1,5 +1,4 @@
-import { stringify } from "querystring";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -9,7 +8,6 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    console.log(enteredNumber);
     if (enteredNumber > 0 && enteredNumber < 10) {
       setErrorMessage("");
     } else if (enteredNumber > 9 || enteredNumber < 1) {
@@ -56,12 +54,15 @@ function App() {
           required
           autoComplete="off"
           placeholder="Enter a number between 1 to 9"
+          min="1"
+          max="9"
         ></input>
         <br></br>
         <label htmlFor="numberInput" className="errorMessage">
           {errorMessage}
         </label>
         <br></br>
+
         <button type="submit">play</button>
       </form>
     </div>
