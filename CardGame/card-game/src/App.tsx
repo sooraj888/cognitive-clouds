@@ -1,30 +1,33 @@
-import React, { useState } from "react";
+import { stringify } from "querystring";
+import React, { useEffect, useMemo, useState } from "react";
 
 import "./App.css";
 
 function App() {
   const [playerName, setPlayerName] = useState("");
-  const [enteredNumber, setEnterdNumber] = useState("");
+  const [enteredNumber, setEnterdNumber] = useState<number>(NaN);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    console.log(enteredNumber);
+    if (enteredNumber > 0 && enteredNumber < 10) {
+      setErrorMessage("");
+    } else if (enteredNumber > 9 || enteredNumber < 1) {
+      setErrorMessage("please entert number between 1 to 9 only");
+    }
+  }, [enteredNumber]);
 
   const handleOnInputFormSubmit = (e: any) => {
     e.preventDefault();
-
-    if (parseInt(enteredNumber) <= 9 && parseInt(enteredNumber) >= 1) {
+    if (enteredNumber > 0 && enteredNumber < 10) {
       console.log("submited");
-      setPlayerName("");
-      setEnterdNumber("");
-      setErrorMessage("");
+    } else {
+      console.log("not submited");
     }
   };
 
   const handleOnNumberChange = (e: any) => {
-    setEnterdNumber(e.target.value);
-    if (parseInt(e.target.value) <= 9 && parseInt(e.target.value) >= 1 || e.target.value==0) {
-      setErrorMessage("");
-    } else {
-      setErrorMessage("please enter the number between 1 to 9 ");
-    }
+    setEnterdNumber(parseInt(e.target.value));
   };
   const handleOnNameChange = (e: any) => {
     setPlayerName(e.target.value);
@@ -38,18 +41,20 @@ function App() {
           value={playerName}
           name="nameInput"
           type="text"
-          required
+          autoComplete="off"
           onChange={handleOnNameChange}
           placeholder="Enter your name"
+          required
         ></input>
         <br></br>
 
         <input
-          value={enteredNumber}
+          value={enteredNumber || ""}
           name="numberInput"
-          type="text"
+          type="number"
           onChange={handleOnNumberChange}
           required
+          autoComplete="off"
           placeholder="Enter a number between 1 to 9"
         ></input>
         <br></br>
