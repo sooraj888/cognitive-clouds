@@ -7,3 +7,35 @@
 input {
   min-width: 200px;
 }
+.grayCard {
+  display: inline-block;
+  background-color: gray;
+  border: 1px solid white;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 20%;
+  max-height: 60%;
+  /* text-indent: -9999px; */
+}
+.redCard {
+  display: inline-block;
+  background-color: red;
+  border: 1px solid white;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 20%;
+  max-height: 60%;
+  text-indent: 1;
+  color: white;
+}
+.greenCard {
+  display: inline-block;
+  background-color: green;
+  border: 1px solid white;
+  color: white;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 20%;
+  max-height: 60%;
+  text-indent: 1;
+}

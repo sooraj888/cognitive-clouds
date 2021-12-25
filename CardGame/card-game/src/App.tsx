@@ -7,13 +7,46 @@ function App() {
   const [isGameEnd, setIsGameEnd] = useState(false);
   const [playerName, setPlayerName] = useState("");
   const [enteredNumber, setEnterdNumber] = useState<number>(NaN);
+  const [cards, setCards] = useState<any>([]);
 
-  
+  const arrayOfCards: any = [];
+  const randomNumberCollector: any = [];
+
+  let randomNumber: number = 0;
+
+  const genrateRandomArray = () => {
+    for (let i = 0; i < 9; i++) {
+      randomNumber = Math.floor(Math.random() * 9) + 1;
+      // //top for genrating random array
+      // {
+      //   for (let j = 0; j < randomNumberCollector.length; j++) {
+      //     if (randomNumber === randomNumberCollector[j]) {
+      //       randomNumber = 0;
+      //     }
+      //   }
+
+      //   randomNumberCollector[i] = randomNumber;
+      // }
+      // // randomNumber
+      // // botom
+
+      arrayOfCards[i] = {
+        id: i + 1,
+        className: "grayCard",
+        randomNumber: randomNumber,
+      };
+    }
+    setCards(arrayOfCards);
+
+    //random number array
+    console.log("randomNumberCollector", randomNumberCollector);
+  };
 
   const handleOnInputFormSubmit = (e: any) => {
     e.preventDefault();
     console.log("submited");
     setIsGameSceen(true);
+    genrateRandomArray();
   };
 
   const handleOnNumberChange = (e: any) => {
@@ -59,8 +92,21 @@ function App() {
         </div>
       ) : (
         <div>
-          {playerName}
-          {enteredNumber}
+          <>
+            <h5>player Name : {playerName}</h5>
+            <h5>Entered Number : {enteredNumber}</h5>
+
+            <br></br>
+            <hr></hr>
+            {cards.map((cardItem: any) => {
+              return (
+                <button className={cardItem.className} key={cardItem.id}>
+                  {cardItem.randomNumber}
+                </button>
+              );
+            })}
+          </>
+          <br></br>
           {!isGameEnd ? (
             <></>
           ) : (
