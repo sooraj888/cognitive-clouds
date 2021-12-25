@@ -12,21 +12,25 @@ input {
   background-color: gray;
   border: 1px solid white;
   min-width: 100px;
-  min-height: 100px;
+  min-height: 150px;
   max-width: 20%;
   max-height: 60%;
   text-indent: -9999px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .redCard {
   display: inline-block;
   background-color: red;
   border: 1px solid white;
   min-width: 100px;
-  min-height: 100px;
+  min-height: 150px;
   max-width: 20%;
   max-height: 60%;
   text-indent: 1;
   color: white;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .greenCard {
   display: inline-block;
@@ -34,19 +38,32 @@ input {
   border: 1px solid white;
   color: white;
   min-width: 100px;
-  min-height: 100px;
+  min-height: 150px;
   max-width: 20%;
   max-height: 60%;
   text-indent: 1;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .btn {
   margin: 30px;
   min-width: 100px;
   min-height: 50px;
+  background-color: rgb(85, 187, 85);
+  color:white ;
+  
 }
 .win {
   color: green;
 }
 .lost {
   color: red;
+}
+h2,
+h5 {
+  text-align: right;
+  margin-right: 30px;
+}
+hr {
+  margin-bottom: 40px;
 }

@@ -81,6 +81,7 @@ function App() {
     setClickCount(0);
     setDisable(false);
     setMessage("");
+    setIsGameEnd(false);
   };
   const handleOnRetry = () => {
     console.log("Retry button clicked");
@@ -88,6 +89,7 @@ function App() {
     setDisable(false);
     setMessage("");
     genrateRandomArray();
+    setIsGameEnd(false);
   };
 
   const handleColorChange = (id: any) => {
@@ -148,9 +150,10 @@ function App() {
             <h1 className={message == "You Won ..." ? "win" : "lost"}>
               {message}
             </h1>
+
+            <h2>Click Count :{cliclCount}</h2>
             <h5>player Name : {playerName}</h5>
             <h5>Entered Number : {enteredNumber}</h5>
-            <h1>Click Count :{cliclCount}</h1>
             <br></br>
             <hr></hr>
             {cards.map((cardItem: any) => {
