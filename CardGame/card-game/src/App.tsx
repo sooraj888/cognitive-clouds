@@ -45,7 +45,7 @@ function App() {
           max="9"
         ></input>
         <br />
-        <button type="submit">Play</button>
+        <button type="submit">Start</button>
       </form>
     </div>
   );
