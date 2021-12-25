@@ -8,16 +8,29 @@ function App() {
   const [playerName, setPlayerName] = useState("");
   const [enteredNumber, setEnterdNumber] = useState<number>(NaN);
   const [cards, setCards] = useState<any>([]);
+  const [cliclCount, setClickCount] = useState<number>(0);
+  const [isDisable, setDisable] = useState<boolean>(false);
+  const [message, setMessage] = useState("");
 
   const arrayOfCards: any = [];
   const randomNumberCollector: any = [];
+
+  useEffect(() => {
+    if (cliclCount > 2) {
+      setDisable(true);
+      setIsGameEnd(true);
+      if (message != "You Won ...") {
+        setMessage("You Lost the game");
+      }
+    }
+  }, [cliclCount]);
 
   let randomNumber: number = 0;
 
   const checkingRondomNumber = (randomNumber: number) => {
     let foundSameNumber = false;
     for (let k = 0; k < randomNumberCollector.length; k++) {
-      if (randomNumberCollector[k] == randomNumber) {
+      if (randomNumberCollector[k] === randomNumber) {
         foundSameNumber = true;
       }
     }
@@ -30,18 +43,6 @@ function App() {
 
   const genrateRandomArray = () => {
     for (let i = 0; i < 9; i++) {
-      // //top for genrating random array
-      // {
-      //   for (let j = 0; j < randomNumberCollector.length; j++) {
-      //     if (randomNumber === randomNumberCollector[j]) {
-      //       randomNumber = 0;
-      //     }
-      //   }
-
-      //
-      // }
-      // // randomNumber
-      // // botom
       do {
         randomNumber = Math.floor(Math.random() * 9) + 1;
       } while (!checkingRondomNumber(randomNumber));
@@ -77,6 +78,38 @@ function App() {
     setIsGameSceen(false);
     setPlayerName("");
     setEnterdNumber(NaN);
+    setClickCount(0);
+    setDisable(false);
+    setMessage("");
+  };
+  const handleOnRetry = () => {
+    console.log("Retry button clicked");
+    setClickCount(0);
+    setDisable(false);
+    setMessage("");
+    genrateRandomArray();
+  };
+
+  const handleColorChange = (id: any) => {
+    setClickCount(cliclCount + 1);
+    console.log("clicked");
+    console.log(id);
+    const updatedValue = cards.map((item: any) => {
+      if (item.randomNumber === id) {
+        if (item.randomNumber === enteredNumber) {
+          setDisable(true);
+          setMessage("You Won ...");
+          setIsGameEnd(true);
+          return { ...item, className: "greenCard" };
+        } else {
+          return { ...item, className: "redCard" };
+        }
+      } else {
+        return item;
+      }
+    });
+
+    setCards(updatedValue);
   };
 
   return (
@@ -92,6 +125,7 @@ function App() {
               onChange={handleOnNameChange}
               placeholder="Enter your name"
               required
+              autoFocus={true}
             ></input>
             <br></br>
             <input
@@ -111,14 +145,22 @@ function App() {
       ) : (
         <div>
           <>
+            <h1 className={message == "You Won ..." ? "win" : "lost"}>
+              {message}
+            </h1>
             <h5>player Name : {playerName}</h5>
             <h5>Entered Number : {enteredNumber}</h5>
-
+            <h1>Click Count :{cliclCount}</h1>
             <br></br>
             <hr></hr>
             {cards.map((cardItem: any) => {
               return (
-                <button className={cardItem.className} key={cardItem.id}>
+                <button
+                  className={cardItem.className}
+                  key={cardItem.id}
+                  onClick={() => handleColorChange(cardItem.randomNumber)}
+                  disabled={isDisable}
+                >
                   {cardItem.randomNumber}
                 </button>
               );
@@ -129,8 +171,13 @@ function App() {
             <></>
           ) : (
             <>
-              <button>Retry</button>
-              <button onClick={handleExitOnClick}>Exit</button>
+              <br></br>
+              <button className="btn" onClick={handleOnRetry}>
+                Retry
+              </button>
+              <button className="btn" onClick={handleExitOnClick}>
+                Exit
+              </button>
             </>
           )}
         </div>

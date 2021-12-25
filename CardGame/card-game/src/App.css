@@ -15,7 +15,7 @@ input {
   min-height: 100px;
   max-width: 20%;
   max-height: 60%;
-  /* text-indent: -9999px; */
+  text-indent: -9999px;
 }
 .redCard {
   display: inline-block;
@@ -38,4 +38,15 @@ input {
   max-width: 20%;
   max-height: 60%;
   text-indent: 1;
+}
+.btn {
+  margin: 30px;
+  min-width: 100px;
+  min-height: 50px;
+}
+.win {
+  color: green;
+}
+.lost {
+  color: red;
 }
