@@ -14,9 +14,22 @@ function App() {
 
   let randomNumber: number = 0;
 
+  const checkingRondomNumber = (randomNumber: number) => {
+    let foundSameNumber = false;
+    for (let k = 0; k < randomNumberCollector.length; k++) {
+      if (randomNumberCollector[k] == randomNumber) {
+        foundSameNumber = true;
+      }
+    }
+    if (foundSameNumber) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   const genrateRandomArray = () => {
     for (let i = 0; i < 9; i++) {
-      randomNumber = Math.floor(Math.random() * 9) + 1;
       // //top for genrating random array
       // {
       //   for (let j = 0; j < randomNumberCollector.length; j++) {
@@ -25,10 +38,15 @@ function App() {
       //     }
       //   }
 
-      //   randomNumberCollector[i] = randomNumber;
+      //
       // }
       // // randomNumber
       // // botom
+      do {
+        randomNumber = Math.floor(Math.random() * 9) + 1;
+      } while (!checkingRondomNumber(randomNumber));
+
+      randomNumberCollector[i] = randomNumber;
 
       arrayOfCards[i] = {
         id: i + 1,
