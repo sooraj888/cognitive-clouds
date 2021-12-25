@@ -141,7 +141,7 @@ function App() {
               max="9"
             ></input>
             <br />
-            <button type="submit">Start</button>
+            <button className="btnStart" type="submit">Start</button>
           </form>
         </div>
       ) : (

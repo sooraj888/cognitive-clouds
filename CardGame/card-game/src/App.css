@@ -50,8 +50,7 @@ input {
   min-width: 100px;
   min-height: 50px;
   background-color: rgb(85, 187, 85);
-  color:white ;
-  
+  color: white;
 }
 .win {
   color: green;
@@ -66,4 +65,12 @@ h5 {
 }
 hr {
   margin-bottom: 40px;
+}
+input {
+  margin-bottom: 10px;
+}
+.btnStart {
+  background-color: rgb(65, 173, 65);
+  color: white;
+  min-width: 100px;
 }
