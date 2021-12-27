@@ -1,4 +1,5 @@
 .firstPage,
+.country-details-page,
 .inputCountryForm {
   display: flex;
   align-items: center;
@@ -13,4 +14,7 @@ input {
 }
 label {
   font-weight: bold;
+}
+.country-details-page {
+  background-color: rgb(43, 255, 0);
 }

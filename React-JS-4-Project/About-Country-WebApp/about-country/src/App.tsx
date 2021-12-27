@@ -11,6 +11,7 @@ import {
 import "./App.css";
 import CountryDetails from "./component/CountryDetails";
 import InputFormPage from "./component/InputFormPage";
+import MockCountryData from "./MockCountryData";
 import mockWhetherApi from "./mockWhetherApi";
 
 function App() {
@@ -27,9 +28,7 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    // console.log(typedCountry);
-  }, [typedCountry]);
+  useEffect(() => {}, [typedCountry]);
   return (
     <div className="App">
       <Router>
