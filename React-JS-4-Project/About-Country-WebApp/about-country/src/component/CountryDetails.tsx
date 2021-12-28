@@ -2,26 +2,31 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import mockWhetherApi from "../mockWhetherApi";
 
-const CountryDetails = ({
-  typedCountry,
-  data,
-  setData,
-  setTypedCountry,
-}: any) => {
+const CountryDetails = ({ typedCountry, data, setData }: any) => {
   const [isLoadingi, setIsLoding] = useState<boolean>(true);
   const [message, setMessage] = useState<string>("loading . . .");
 
   const [isWhetherHide, setIsWetherHide] = useState(true);
   // const [whetherData, setWhetherData] = useState<any>(mockWhetherApi);
+
   const [whetherData, setWhetherData] = useState<any>();
+
   const handleOnCapitalWhether = () => {
     if (isWhetherHide) {
+      fetch(
+        "http://api.weatherstack.com/current?access_key=0501f936724ec061162e4552658a43b6&query=" +
+          data?.capital
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Wether data   ..", data);
+          setWhetherData(data);
+        });
+
       setIsWetherHide(false);
     } else {
       setIsWetherHide(true);
     }
-
-    
   };
 
   const checkTypedCountry = (countryName: any) => {
@@ -32,7 +37,8 @@ const CountryDetails = ({
     }
   };
 
-  console.log("typedCountry", typedCountry);
+  // console.log("typedCountry", typedCountry);
+
   const handleFetchCountryData = useCallback(() => {
     try {
       fetch(
@@ -42,7 +48,7 @@ const CountryDetails = ({
         .then((resData) => {
           setData(resData[0]);
 
-          console.log("direct data data", resData);
+          // console.log("direct data data", resData);
 
           localStorage.setItem("data", JSON.stringify(data));
           if (resData?.status === 404) {
@@ -57,7 +63,7 @@ const CountryDetails = ({
     }
   }, [typedCountry]);
   useEffect(handleFetchCountryData, [handleFetchCountryData]);
-  console.log("wether", whetherData, "asdad");
+
   return (
     <div className="country-page">
       {isLoadingi ? (
@@ -84,10 +90,26 @@ const CountryDetails = ({
             <></>
           ) : (
             <div className="capital-whether">
-              <h4>whether report of {data?.capital}</h4>
-              <img src={whetherData?.current?.weather_icons[0]}></img>
-              <div>Tempratur:{whetherData?.current?.temperature} </div>
-              <div>Wind speed : {whetherData?.current?.wind_speed}</div>
+              <div>
+                <div className="whetherheadding">
+                  <img
+                    className="wetherIcon"
+                    src={whetherData?.current?.weather_icons[0]}
+                  ></img>
+                  <h3>
+                    whether report of <u>{data?.capital}</u>
+                  </h3>
+                </div>
+              </div>
+
+              <div>
+                <span>Tempratur</span>:
+                <span>{whetherData?.current?.temperature} </span>
+              </div>
+              <div>
+                <span>Wind speed </span>:
+                <span>{whetherData?.current?.wind_speed}</span>
+              </div>
             </div>
           )}
         </div>
@@ -97,3 +119,20 @@ const CountryDetails = ({
 };
 
 export default CountryDetails;
+
+/*
+
+http://api.weatherstack.com/current
+    ? access_key = YOUR_ACCESS_KEY
+    & query = New York
+
+
+    http://api.weatherstack.com/current?access_key=0501f936724ec061162e4552658a43b6&query= Delhi
+
+
+     http://api.weatherstack.com/current?access_key=0501f936724ec061162e4552658a43b6&query=pak
+
+    
+http://api.weatherstack.com/current?access_key=0501f936724ec061162e4552658a43b6&query=NewYork
+
+*/
