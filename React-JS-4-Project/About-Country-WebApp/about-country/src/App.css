@@ -17,4 +17,8 @@ label {
 }
 .country-details-page {
   background-color: rgb(43, 255, 0);
+  padding-bottom: 300px;
+}
+img {
+  display: block;
 }

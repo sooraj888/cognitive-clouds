@@ -11,12 +11,13 @@ import {
 import "./App.css";
 import CountryDetails from "./component/CountryDetails";
 import InputFormPage from "./component/InputFormPage";
-import MockCountryData from "./MockCountryData";
-import mockWhetherApi from "./mockWhetherApi";
+
+
 
 function App() {
   const [typedCountry, setTypedCountry] = useState("");
   const [isCountryTyped, setIsCountryTyped] = useState(true);
+  const [data, setData] = useState<any>([]);
 
   const handleOnInputCountryChange = (e: any) => {
     setTypedCountry(e.target.value);
@@ -47,7 +48,11 @@ function App() {
           <Route
             path="/country-details-page"
             element={
-              <CountryDetails typedCountry={typedCountry}></CountryDetails>
+              <CountryDetails
+                typedCountry={typedCountry}
+                setData={setData}
+                data={data}
+              ></CountryDetails>
             }
           ></Route>
         </Routes>
