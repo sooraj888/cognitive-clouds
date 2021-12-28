@@ -12,14 +12,13 @@ import "./App.css";
 import CountryDetails from "./component/CountryDetails";
 import InputFormPage from "./component/InputFormPage";
 
-
-
 function App() {
   const [typedCountry, setTypedCountry] = useState("");
   const [isCountryTyped, setIsCountryTyped] = useState(true);
   const [data, setData] = useState<any>([]);
 
   const handleOnInputCountryChange = (e: any) => {
+    localStorage.setItem("typedCountry", e.target.value);
     setTypedCountry(e.target.value);
     if (e.target.value.trim() !== "") {
       setIsCountryTyped(false);
@@ -52,6 +51,7 @@ function App() {
                 typedCountry={typedCountry}
                 setData={setData}
                 data={data}
+                setTypedCountry={setTypedCountry}
               ></CountryDetails>
             }
           ></Route>

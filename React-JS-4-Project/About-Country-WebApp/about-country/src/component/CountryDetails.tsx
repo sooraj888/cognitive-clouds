@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import MockCountryData from "../MockCountryData";
+import React, { useCallback, useEffect, useState } from "react";
+
 import mockWhetherApi from "../mockWhetherApi";
 
-const CountryDetails = ({ typedCountry, data, setData }: any) => {
+const CountryDetails = ({
+  typedCountry,
+  data,
+  setData,
+  setTypedCountry,
+}: any) => {
   const [isLoadingi, setIsLoding] = useState<boolean>(true);
   const [message, setMessage] = useState<string>("loading . . .");
 
@@ -17,22 +21,45 @@ const CountryDetails = ({ typedCountry, data, setData }: any) => {
       setIsWetherHide(true);
     }
   };
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/name/" + typedCountry)
-      .then((response) => response.json())
-      .then((resData) => {
-        setData(resData[0]);
 
-        console.log("direct data data", resData);
-        localStorage.setItem("data", JSON.stringify(data));
-        if (resData?.status === 404) {
-          setMessage("404 Not Found");
-          setIsLoding(true);
-        } else {
-          setIsLoding(false);
-        }
-      });
+  // useEffect(() => {
+  //   if (typedCountry !== "") {
+  //     typedCountry = localStorage.getItem("typedCountry");
+  //   }
+  //   console.log("typedCountry", typedCountry);
+  // }, [typedCountry]);
+
+  // if (typedCountry !== "") {
+  //   typedCountry = localStorage.getItem("typedCountry");
+  // }
+  if (typedCountry === "") {
+    console.log("typed country 101 ", typedCountry);
+    setTypedCountry(localStorage.getItem("typedCountry"));
+  }
+
+  console.log("typedCountry", typedCountry);
+  const handleFetchCountryData = useCallback(() => {
+    try {
+      fetch("https://restcountries.com/v3.1/name/" + typedCountry)
+        .then((response) => response.json())
+        .then((resData) => {
+          setData(resData[0]);
+
+          console.log("direct data data", resData);
+
+          localStorage.setItem("data", JSON.stringify(data));
+          if (resData?.status === 404) {
+            setMessage("404 Not Found");
+            setIsLoding(true);
+          } else {
+            setIsLoding(false);
+          }
+        });
+    } catch {
+      console.log("no internet");
+    }
   }, [typedCountry]);
+  useEffect(handleFetchCountryData, [handleFetchCountryData]);
   console.log("wether", whetherData, "asdad");
   return (
     <div>
@@ -40,13 +67,21 @@ const CountryDetails = ({ typedCountry, data, setData }: any) => {
         <>{message} </>
       ) : (
         <div className="country-details-page">
-          <h1>{data?.name?.common}</h1> <br></br>
-          Capital:{data?.capital} <br></br>
-          population:{data?.population} <br></br>
-          latlng{data?.latlng} <br></br>
-          Flag<img src={data?.flags?.png}></img> <br></br>
-          <a>{data?.flags?.png}</a>
-          <br></br>
+          <h1>{data?.name?.common}</h1>
+          <div>
+            <span>Capital:</span>:<span>{data?.capital}</span>
+          </div>
+          <div>
+            <span>Population</span>:<span>{data?.population}</span>
+          </div>
+          <div>
+            <span>LatLng:</span>:<span>{data?.latlng}</span>
+          </div>
+          <img src={data?.flags?.png}></img>
+          <a target="_blank" href={data?.flags?.png}>
+            {data?.flags?.png}
+          </a>
+
           <button onClick={handleOnCapitalWhether}>capital whether </button>
           {isWhetherHide ? (
             <></>
