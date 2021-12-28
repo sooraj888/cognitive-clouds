@@ -12,26 +12,17 @@ const CountryDetails = ({
   const [message, setMessage] = useState<string>("loading . . .");
 
   const [isWhetherHide, setIsWetherHide] = useState(true);
-  const [whetherData, setWhetherData] = useState<any>(mockWhetherApi);
-
+  // const [whetherData, setWhetherData] = useState<any>(mockWhetherApi);
+  const [whetherData, setWhetherData] = useState<any>();
   const handleOnCapitalWhether = () => {
     if (isWhetherHide) {
       setIsWetherHide(false);
     } else {
       setIsWetherHide(true);
     }
+
+    
   };
-
-  // useEffect(() => {
-  //   if (typedCountry !== "") {
-  //     typedCountry = localStorage.getItem("typedCountry");
-  //   }
-  //   console.log("typedCountry", typedCountry);
-  // }, [typedCountry]);
-
-  // if (typedCountry !== "") {
-  //   typedCountry = localStorage.getItem("typedCountry");
-  // }
 
   const checkTypedCountry = (countryName: any) => {
     if (countryName === "") {
@@ -68,7 +59,7 @@ const CountryDetails = ({
   useEffect(handleFetchCountryData, [handleFetchCountryData]);
   console.log("wether", whetherData, "asdad");
   return (
-    <div>
+    <div className="country-page">
       {isLoadingi ? (
         <>{message} </>
       ) : (
@@ -92,8 +83,8 @@ const CountryDetails = ({
           {isWhetherHide ? (
             <></>
           ) : (
-            <div>
-              whether report of {data?.capital}
+            <div className="capital-whether">
+              <h4>whether report of {data?.capital}</h4>
               <img src={whetherData?.current?.weather_icons[0]}></img>
               <div>Tempratur:{whetherData?.current?.temperature} </div>
               <div>Wind speed : {whetherData?.current?.wind_speed}</div>
