@@ -32,15 +32,21 @@ const CountryDetails = ({
   // if (typedCountry !== "") {
   //   typedCountry = localStorage.getItem("typedCountry");
   // }
-  if (typedCountry === "") {
-    console.log("typed country 101 ", typedCountry);
-    setTypedCountry(localStorage.getItem("typedCountry"));
-  }
+
+  const checkTypedCountry = (countryName: any) => {
+    if (countryName === "") {
+      return localStorage.getItem("typedCountry");
+    } else {
+      return countryName;
+    }
+  };
 
   console.log("typedCountry", typedCountry);
   const handleFetchCountryData = useCallback(() => {
     try {
-      fetch("https://restcountries.com/v3.1/name/" + typedCountry)
+      fetch(
+        "https://restcountries.com/v3.1/name/" + checkTypedCountry(typedCountry)
+      )
         .then((response) => response.json())
         .then((resData) => {
           setData(resData[0]);
