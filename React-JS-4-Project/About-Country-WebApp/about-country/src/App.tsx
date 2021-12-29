@@ -27,8 +27,13 @@ function App() {
       e.target.value = e.target.value.trim();
     }
   };
+  console.log("displaying app");
 
-  useEffect(() => {}, [typedCountry]);
+  const onInputFormSubmit = (e: any) => {
+    e.preventDefault();
+    console.log("form submit");
+  };
+
   return (
     <div className="App">
       <Router>
@@ -41,6 +46,7 @@ function App() {
                 isCountryTyped={isCountryTyped}
                 typedCountry={typedCountry}
                 setTypedCountry={setTypedCountry}
+                onInputFormSubmit={onInputFormSubmit}
               ></InputFormPage>
             }
           ></Route>
@@ -51,7 +57,6 @@ function App() {
                 typedCountry={typedCountry}
                 setData={setData}
                 data={data}
-                setTypedCountry={setTypedCountry}
               ></CountryDetails>
             }
           ></Route>
@@ -62,18 +67,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-
-const clicl = () => {
-    console.log("data", data);
-  };
-
-  const [data, setData] = useState({});
-
-    useEffect(() => {
-    setData(mockWhetherApi);
-  }, []);
-
-*/
