@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-import CountryDetails from "./component/CountryDetails";
+import PageOfCountryDetails from "./component/PageOfCountryDetails";
 import InputFormPage from "./component/InputFormPage";
 
 function App() {
@@ -41,23 +41,25 @@ function App() {
           <Route
             path="/"
             element={
-              <InputFormPage
-                handleOnInputCountryChange={handleOnInputCountryChange}
-                isCountryTyped={isCountryTyped}
-                typedCountry={typedCountry}
-                setTypedCountry={setTypedCountry}
-                onInputFormSubmit={onInputFormSubmit}
-              ></InputFormPage>
+              <>
+                <InputFormPage
+                  handleOnInputCountryChange={handleOnInputCountryChange}
+                  isCountryTyped={isCountryTyped}
+                  typedCountry={typedCountry}
+                  setTypedCountry={setTypedCountry}
+                  onInputFormSubmit={onInputFormSubmit}
+                ></InputFormPage>
+              </>
             }
           ></Route>
           <Route
             path="/country-details-page"
             element={
-              <CountryDetails
+              <PageOfCountryDetails
                 typedCountry={typedCountry}
                 setData={setData}
                 data={data}
-              ></CountryDetails>
+              ></PageOfCountryDetails>
             }
           ></Route>
         </Routes>

@@ -6,12 +6,11 @@ const InputFormPage = ({
   typedCountry,
   onInputFormSubmit,
 }: any) => {
-  console.log("displaying Input Page");
   return (
     <form className="inputCountryForm" onSubmit={onInputFormSubmit}>
       <label htmlFor="countryName">Enter country name:</label>
       <input
-        type="tex"
+        type="text"
         autoFocus
         placeholder="country name"
         className="countryName"
@@ -19,6 +18,7 @@ const InputFormPage = ({
         onChange={handleOnInputCountryChange}
         value={typedCountry}
       ></input>
+
       <Link to="/country-details-page">
         <input type="submit" disabled={isCountryTyped}></input>
       </Link>
