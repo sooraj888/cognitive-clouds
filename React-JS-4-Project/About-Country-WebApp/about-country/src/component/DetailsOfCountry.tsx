@@ -4,7 +4,7 @@ const DetailsOfCountry = ({
   data,
   handleOnCapitalWhether,
   isWhetherHide,
-  whetherData,
+  weatherData,
 }: any) => {
   return (
     <div className="country-details-page">
@@ -27,7 +27,7 @@ const DetailsOfCountry = ({
       {isWhetherHide ? (
         <></>
       ) : (
-        <CapitalWeather whetherData={whetherData} data={data}></CapitalWeather>
+        <CapitalWeather whetherData={weatherData} data={data}></CapitalWeather>
       )}
     </div>
   );
