@@ -1,0 +1,15 @@
+.h1clr {
+  color: azure;
+}
+.circle {
+  background-color: red;
+  color: wheat;
+  border-radius: 100%;
+  padding: 20px 20px;
+}
+.container {
+  padding: 50px;
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+}
