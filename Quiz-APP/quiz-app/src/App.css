@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.AnsBox {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #000000;
+  min-width: 400px;
+}

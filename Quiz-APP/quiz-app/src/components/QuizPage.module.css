@@ -1,8 +1,8 @@
 .h1clr {
   color: azure;
 }
-.circle {
-  background-color: red;
+.circleGray {
+  background-color: rgb(92, 92, 92);
   color: wheat;
   border-radius: 100%;
   padding: 20px 20px;
@@ -12,4 +12,10 @@
   background-color: pink;
   display: flex;
   justify-content: space-between;
+}
+.circleRed {
+  background-color: red;
+  color: wheat;
+  border-radius: 100%;
+  padding: 20px 20px;
 }

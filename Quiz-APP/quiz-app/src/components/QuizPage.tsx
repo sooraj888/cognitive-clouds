@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 import styles from "./QuizPage.module.css";
+import QusionOne from "./QuesionComponents/QusionOne";
+import data from "./LanguageData";
 
 const QuizPage = ({ selectedLaguage, data }: any) => {
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
@@ -33,16 +35,21 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
 
     setArrOfManageQusion(arrOfQuesionVisibility);
   }, []);
+  // console.log(data[0]);
 
   return (
     <div>
       <div className={styles.container}>
         {data.map((item: any) => {
-          // console.log(item);
+          console.log(item);
           return (
             <button
               key={item.id}
-              className={styles.circle}
+              className={
+                arrOfManageQusion[item.id - 1]?.completion
+                  ? styles.circleRed
+                  : styles.circleGray
+              }
               onClick={() => handleOnQuesiinBtnClick(item.id)}
             >
               {item.id}
@@ -51,9 +58,22 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
         })}
       </div>
 
-      {arrOfManageQusion[0]?.visibility ? <>quesio1</> : <>false</>}
-      {arrOfManageQusion[1]?.visibility ? <>qn2</> : <>false</>}
-      {arrOfManageQusion[2]?.visibility ? <>quesio3</> : <>false</>}
+      {arrOfManageQusion[0]?.visibility ? (
+        <div>
+          <QusionOne
+            data={data[0]}
+            lanhuage={selectedLaguage}
+            arrOfManageQusion={arrOfManageQusion}
+            setArrOfManageQusion={setArrOfManageQusion}
+          ></QusionOne>
+        </div>
+      ) : (
+        <></>
+      )}
+      {arrOfManageQusion[1]?.visibility ? <div>qn2</div> : <></>}
+      {arrOfManageQusion[2]?.visibility ? <div>quesio3</div> : <></>}
+      {arrOfManageQusion[3]?.visibility ? <div>quesio4</div> : <></>}
+      {arrOfManageQusion[4]?.visibility ? <div>quesio5</div> : <></>}
     </div>
   );
 };
