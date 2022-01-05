@@ -29,39 +29,20 @@ const HomePage = ({
           className={s.a}
         ></input>
         <div>
-          <input
-            type="radio"
-            required
-            name="gender"
-            id="male"
-            value="male"
-            onClick={handleOnRadioGenderSelect}
-          ></input>
-          Male
-          <input
-            type="radio"
-            name="gender"
-            id="female"
-            value="female"
-            onClick={handleOnRadioGenderSelect}
-          ></input>
-          Female
-          <input
-            type="radio"
-            name="gender"
-            id="others"
-            value="others"
-            onClick={handleOnRadioGenderSelect}
-          ></input>
-          Others
+          Select Gender :{" "}
+          <select value={gender} onChange={handleOnRadioGenderSelect} required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
         </div>
-
-        <select onChange={handleOnSelect} required>
+        Selcet Language:{" "}
+        <select value={selectedLaguage} onChange={handleOnSelect} required>
           <option value="English">English</option>
           <option value="Kannada">Kannada</option>
           <option value="Hindi">Hindi</option>
         </select>
-
+        <br></br>
         <Link to="/quizPage">
           <input type="submit" value={"Submit"} disabled={!isFormFill}></input>
         </Link>
