@@ -10,21 +10,27 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
       visibility: false,
       Ans: false,
       completion: false,
+      id: item.id,
     };
   });
 
   const handleOnQuesiinBtnClick = (id: any) => {
-    console.log(arrOfManageQusion);
     let arr = arrOfManageQusion.map((item: any) => {
+      if (item.id == id) {
+        item.visibility = true;
+      } else {
+        item.visibility = false;
+      }
+
       return item;
     });
-    console.log(arr);
+    // console.log(arr);
+    setArrOfManageQusion(arr);
   };
 
   useEffect(() => {
     arrOfQuesionVisibility[0].visibility = true;
 
-    console.log("arrOfQuesionVisibility", arrOfQuesionVisibility);
     setArrOfManageQusion(arrOfQuesionVisibility);
   }, []);
 
@@ -37,7 +43,7 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
             <button
               key={item.id}
               className={styles.circle}
-              onClick={() => handleOnQuesiinBtnClick(item.id - 1)}
+              onClick={() => handleOnQuesiinBtnClick(item.id)}
             >
               {item.id}
             </button>

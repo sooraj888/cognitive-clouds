@@ -7,28 +7,28 @@ import QuizPage from "./components/QuizPage";
 import data from "./components/LanguageData";
 
 function App() {
-  console.log("rendeing app 111");
+  // console.log("rendeing app 111");
   const [inpuName, setInputName] = useState("");
   const [gender, setGender] = useState("Male");
   const [selectedLaguage, setSelectedLaguage] = useState("English");
   const [isFormFill, setIsFormFill] = useState(false);
 
   const handleInputName = (e: any) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setInputName(e.target.value);
   };
 
   const handleOnRadioGenderSelect = (e: any) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setGender(e.target.value);
   };
   const handleOnSelect = (e: any) => {
-    console.log(e.target.value, "fsdf");
+    // console.log(e.target.value, "fsdf");
     setSelectedLaguage(e.target.value);
   };
   useEffect(() => {
     if (gender != "" && selectedLaguage != "" && inpuName != "") {
-      console.log(gender, selectedLaguage, inpuName);
+      // console.log(gender, selectedLaguage, inpuName);
       setIsFormFill(true);
     } else {
       setIsFormFill(false);
