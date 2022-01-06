@@ -1,7 +1,6 @@
-import { Language } from "@mui/icons-material";
 import React, { useEffect } from "react";
 
-const QusionTwo = ({
+const QusionThree = ({
   data,
   language,
   handleOnAnswerCompletion,
@@ -13,6 +12,7 @@ const QusionTwo = ({
   let qusion = "Q" + language;
   let ans = "ans" + language;
   let option = "optn" + language;
+  let count = 0;
 
   const handleAnswerChange = (e: any) => {
     // console.log("value", e.target.value);
@@ -40,7 +40,7 @@ const QusionTwo = ({
     <div>
       {data?.[qusion]}
       <br></br>
-      <input
+      {/* <input
         name="yesOrNO"
         type="radio"
         value={data[option][0]}
@@ -56,8 +56,41 @@ const QusionTwo = ({
         checked={inputAnswer == data[option][1] ? true : false}
       ></input>
       {data[option][1]}
+      <input
+        name="yesOrNO"
+        type="radio"
+        value={data[option][2]}
+        onChange={handleAnswerChange}
+        checked={inputAnswer == data[option][2] ? true : false}
+      ></input>
+      {data[option][2]}
+      <input
+        name="yesOrNO"
+        type="radio"
+        value={data[option][3]}
+        onChange={handleAnswerChange}
+        checked={inputAnswer == data[option][3] ? true : false}
+      ></input>
+      {data[option][3]} */}
+
+      {console.log("data 75", data[option])}
+      {data[option].map((item: any) => {
+        count += 1;
+        return (
+          <span key={item}>
+            <input
+              name="option"
+              type="radio"
+              value={item}
+              onChange={handleAnswerChange}
+              checked={inputAnswer == item ? true : false}
+            ></input>
+            {item}
+          </span>
+        );
+      })}
     </div>
   );
 };
 
-export default QusionTwo;
+export default QusionThree;

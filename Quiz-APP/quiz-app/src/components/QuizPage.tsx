@@ -4,10 +4,12 @@ import styles from "./QuizPage.module.css";
 import QusionOne from "./QuesionComponents/QusionOne";
 import data from "./LanguageData";
 import QusionTwo from "./QuesionComponents/QusionTwo";
+import QusionThree from "./QuesionComponents/QusionThree";
 
 const QuizPage = ({ selectedLaguage, data }: any) => {
   const [inputAnswer1, setInputAnswer1] = useState<any>("");
   const [inputAnswer2, setInputAnswer2] = useState<any>("");
+  const [inputAnswer3, setInputAnswer3] = useState<any>("");
 
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
   const arrOfQuesionVisibility: any = [];
@@ -117,7 +119,21 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
       ) : (
         <></>
       )}
-      {arrOfManageQusion[2]?.visibility ? <div>quesio3</div> : <></>}
+      {arrOfManageQusion[2]?.visibility ? (
+        <div>
+          {" "}
+          <QusionThree
+            data={data[2]}
+            language={selectedLaguage}
+            handleOnAnswerCompletion={handleOnAnswerCompletion}
+            setInputAnswer={setInputAnswer3}
+            inputAnswer={inputAnswer3}
+            handleOnCarrectAnswer={handleOnCarrectAnswer}
+          ></QusionThree>
+        </div>
+      ) : (
+        <></>
+      )}
       {arrOfManageQusion[3]?.visibility ? <div>quesio4</div> : <></>}
       {arrOfManageQusion[4]?.visibility ? <div>quesio5</div> : <></>}
     </div>
