@@ -3,15 +3,15 @@ import { json } from "stream/consumers";
 
 const QusionOne = ({
   data,
-  lanhuage,
+  language,
   handleOnAnswerCompletion,
   setInputAnswer,
   inputAnswer,
   handleOnCarrectAnswer,
 }: any) => {
   // console.log(data, lanhuage);
-  let qusion = "Q" + lanhuage;
-  let ans = "ans" + lanhuage;
+  let qusion = "Q" + language;
+  let ans = "ans" + language;
 
   const handleAnswerChange = (e: any) => {
     setInputAnswer(e.target.value);

@@ -3,9 +3,12 @@ import CircleIcon from "@mui/icons-material/Circle";
 import styles from "./QuizPage.module.css";
 import QusionOne from "./QuesionComponents/QusionOne";
 import data from "./LanguageData";
+import QusionTwo from "./QuesionComponents/QusionTwo";
 
 const QuizPage = ({ selectedLaguage, data }: any) => {
-  const [inputAnswer1, setInputAnswer1] = useState("");
+  const [inputAnswer1, setInputAnswer1] = useState<any>("");
+  const [inputAnswer2, setInputAnswer2] = useState<any>("");
+
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
   const arrOfQuesionVisibility: any = [];
   data.map((item: any) => {
@@ -90,7 +93,7 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
         <div>
           <QusionOne
             data={data[0]}
-            lanhuage={selectedLaguage}
+            language={selectedLaguage}
             handleOnAnswerCompletion={handleOnAnswerCompletion}
             setInputAnswer={setInputAnswer1}
             inputAnswer={inputAnswer1}
@@ -100,7 +103,20 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
       ) : (
         <></>
       )}
-      {arrOfManageQusion[1]?.visibility ? <div>qn2</div> : <></>}
+      {arrOfManageQusion[1]?.visibility ? (
+        <div>
+          <QusionTwo
+            data={data[1]}
+            language={selectedLaguage}
+            handleOnAnswerCompletion={handleOnAnswerCompletion}
+            setInputAnswer={setInputAnswer2}
+            inputAnswer={inputAnswer2}
+            handleOnCarrectAnswer={handleOnCarrectAnswer}
+          ></QusionTwo>
+        </div>
+      ) : (
+        <></>
+      )}
       {arrOfManageQusion[2]?.visibility ? <div>quesio3</div> : <></>}
       {arrOfManageQusion[3]?.visibility ? <div>quesio4</div> : <></>}
       {arrOfManageQusion[4]?.visibility ? <div>quesio5</div> : <></>}
