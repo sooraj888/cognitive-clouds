@@ -7,6 +7,7 @@ const QusionOne = ({
   handleOnAnswerCompletion,
   setInputAnswer,
   inputAnswer,
+  handleOnCarrectAnswer,
 }: any) => {
   // console.log(data, lanhuage);
   let qusion = "Q" + lanhuage;
@@ -14,14 +15,19 @@ const QusionOne = ({
 
   const handleAnswerChange = (e: any) => {
     setInputAnswer(e.target.value);
-    // console.log(data[ans]);
+    console.log(data[ans]);
 
-    if (data[ans].toUpperCase() === e.target.value.toUpperCase()) {
+    if (
+      data[ans].toUpperCase().trim() === e.target.value.toUpperCase().trim()
+    ) {
+      handleOnCarrectAnswer(data.id, true);
       console.log("caorrect answer");
+    } else {
+      handleOnCarrectAnswer(data.id, false);
     }
   };
   useEffect(() => {
-    console.log("inputAns", inputAnswer);
+    // console.log("inputAns", inputAnswer);
     if (inputAnswer.trim() != "") {
       handleOnAnswerCompletion(1, true);
     } else if (inputAnswer.trim() === "") {

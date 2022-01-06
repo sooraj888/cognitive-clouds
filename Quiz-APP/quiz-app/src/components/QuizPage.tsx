@@ -5,7 +5,7 @@ import QusionOne from "./QuesionComponents/QusionOne";
 import data from "./LanguageData";
 
 const QuizPage = ({ selectedLaguage, data }: any) => {
-  const [inputAnswer, setInputAnswer] = useState("");
+  const [inputAnswer1, setInputAnswer1] = useState("");
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
   const arrOfQuesionVisibility: any = [];
   data.map((item: any) => {
@@ -31,12 +31,6 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
     setArrOfManageQusion(arr);
   };
 
-  useEffect(() => {
-    arrOfQuesionVisibility[0].visibility = true;
-
-    setArrOfManageQusion(arrOfQuesionVisibility);
-  }, []);
-
   const handleOnAnswerCompletion = (id: any, completion: any) => {
     let arr = arrOfManageQusion.map((item: any) => {
       if (item.id == id) {
@@ -48,8 +42,28 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
     // console.log(arr);
     setArrOfManageQusion(arr);
   };
+
+  const handleOnCarrectAnswer = (id: any, correctAnswer: any) => {
+    let arr = arrOfManageQusion.map((item: any) => {
+      if (item.id == id) {
+        item.Ans = correctAnswer;
+      }
+      return item;
+    });
+    // console.log(arr);
+    setArrOfManageQusion(arr);
+  };
   // console.log(data[0]);
   // handleOnAnswerCompletion(1, true);
+  useEffect(() => {
+    arrOfQuesionVisibility[0].visibility = true;
+
+    setArrOfManageQusion(arrOfQuesionVisibility);
+  }, []);
+
+  useEffect(() => {
+    console.log(arrOfManageQusion);
+  }, [arrOfManageQusion]);
 
   return (
     <div>
@@ -78,8 +92,9 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
             data={data[0]}
             lanhuage={selectedLaguage}
             handleOnAnswerCompletion={handleOnAnswerCompletion}
-            setInputAnswer={setInputAnswer}
-            inputAnswer={inputAnswer}
+            setInputAnswer={setInputAnswer1}
+            inputAnswer={inputAnswer1}
+            handleOnCarrectAnswer={handleOnCarrectAnswer}
           ></QusionOne>
         </div>
       ) : (
