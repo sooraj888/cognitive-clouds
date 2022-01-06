@@ -8,6 +8,7 @@ import data from "./components/LanguageData";
 
 function App() {
   // console.log("rendeing app 111");
+  const [inputAnswer, setInputAnswer] = useState("");
   const [inpuName, setInputName] = useState("");
   const [gender, setGender] = useState("Male");
   const [selectedLaguage, setSelectedLaguage] = useState("English");

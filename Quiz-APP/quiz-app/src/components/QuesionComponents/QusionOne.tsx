@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { json } from "stream/consumers";
 
 const QusionOne = ({
   data,
   lanhuage,
-  setArrOfManageQusion,
-  arrOfManageQusion,
+  handleOnAnswerCompletion,
+  setInputAnswer,
+  inputAnswer,
 }: any) => {
-  console.log(data, lanhuage);
+  // console.log(data, lanhuage);
   let qusion = "Q" + lanhuage;
   let ans = "ans" + lanhuage;
-  const [inputAnswer, setInputAnswer] = useState("");
+
   const handleAnswerChange = (e: any) => {
     setInputAnswer(e.target.value);
     // console.log(data[ans]);
@@ -19,6 +20,14 @@ const QusionOne = ({
       console.log("caorrect answer");
     }
   };
+  useEffect(() => {
+    console.log("inputAns", inputAnswer);
+    if (inputAnswer.trim() != "") {
+      handleOnAnswerCompletion(1, true);
+    } else if (inputAnswer.trim() === "") {
+      handleOnAnswerCompletion(1, false);
+    }
+  }, [inputAnswer]);
   return (
     <div>
       {data?.[qusion]}

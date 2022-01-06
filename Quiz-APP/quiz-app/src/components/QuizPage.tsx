@@ -5,6 +5,7 @@ import QusionOne from "./QuesionComponents/QusionOne";
 import data from "./LanguageData";
 
 const QuizPage = ({ selectedLaguage, data }: any) => {
+  const [inputAnswer, setInputAnswer] = useState("");
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
   const arrOfQuesionVisibility: any = [];
   data.map((item: any) => {
@@ -35,13 +36,26 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
 
     setArrOfManageQusion(arrOfQuesionVisibility);
   }, []);
+
+  const handleOnAnswerCompletion = (id: any, completion: any) => {
+    let arr = arrOfManageQusion.map((item: any) => {
+      if (item.id == id) {
+        item.completion = completion;
+      }
+
+      return item;
+    });
+    // console.log(arr);
+    setArrOfManageQusion(arr);
+  };
   // console.log(data[0]);
+  // handleOnAnswerCompletion(1, true);
 
   return (
     <div>
       <div className={styles.container}>
         {data.map((item: any) => {
-          console.log(item);
+          // console.log(item);
           return (
             <button
               key={item.id}
@@ -63,8 +77,9 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
           <QusionOne
             data={data[0]}
             lanhuage={selectedLaguage}
-            arrOfManageQusion={arrOfManageQusion}
-            setArrOfManageQusion={setArrOfManageQusion}
+            handleOnAnswerCompletion={handleOnAnswerCompletion}
+            setInputAnswer={setInputAnswer}
+            inputAnswer={inputAnswer}
           ></QusionOne>
         </div>
       ) : (
