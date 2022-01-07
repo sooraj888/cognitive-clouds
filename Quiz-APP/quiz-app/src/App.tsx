@@ -12,6 +12,8 @@ function App() {
   const [selectedLaguage, setSelectedLaguage] = useState("English");
   const [isFormFill, setIsFormFill] = useState(false);
 
+  const [finalResultTotal, setFinalResultTotal] = useState<any>(0);
+
   const handleInputName = (e: any) => {
     // console.log(e.target.value);
     setInputName(e.target.value);
@@ -55,7 +57,12 @@ function App() {
         <Route
           path="/quizPage"
           element={
-            <QuizPage selectedLaguage={selectedLaguage} data={data}></QuizPage>
+            <QuizPage
+              selectedLaguage={selectedLaguage}
+              data={data}
+              finalResultTotal={finalResultTotal}
+              setFinalResultTotal={setFinalResultTotal}
+            ></QuizPage>
           }
         ></Route>
       </Routes>

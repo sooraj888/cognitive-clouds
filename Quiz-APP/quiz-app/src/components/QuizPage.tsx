@@ -7,7 +7,12 @@ import QusionTwo from "./QuesionComponents/QusionTwo";
 import QusionThree from "./QuesionComponents/QusionThree";
 import QusionFour from "./QuesionComponents/QusionFour";
 
-const QuizPage = ({ selectedLaguage, data }: any) => {
+const QuizPage = ({
+  selectedLaguage,
+  data,
+  setFinalResultTotal,
+  finalResultTotal,
+}: any) => {
   const [inputAnswer1, setInputAnswer1] = useState<any>("");
   const [inputAnswer2, setInputAnswer2] = useState<any>("");
   const [inputAnswer3, setInputAnswer3] = useState<any>("");
@@ -69,9 +74,20 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
   }, []);
 
   useEffect(() => {
+    let countOfCarrecrAnswer = 0;
     console.log(arrOfManageQusion);
+    arrOfManageQusion.map((item: any) => {
+      if (item.Ans) {
+        countOfCarrecrAnswer += 1;
+        console.log("ans", item.Ans);
+      }
+    });
+    setFinalResultTotal(countOfCarrecrAnswer);
   }, [arrOfManageQusion]);
 
+  useEffect(() => {
+    console.log(finalResultTotal);
+  }, [finalResultTotal]);
   return (
     <div>
       <div className={styles.container}>
