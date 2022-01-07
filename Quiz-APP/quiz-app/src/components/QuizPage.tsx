@@ -88,6 +88,21 @@ const QuizPage = ({
     setFinalResultTotal(countOfCarrecrAnswer);
   }, [arrOfManageQusion]);
 
+  const [iscomplited, setIscomplited] = useState<any>(false);
+  let complition = false;
+  useEffect(() => {
+    arrOfManageQusion.map((item: any) => {
+      if (!item.completion) {
+        complition = true;
+      }
+    });
+    if (complition) {
+      setIscomplited(false);
+    } else {
+      setIscomplited(true);
+    }
+  }, [arrOfManageQusion]);
+
   useEffect(() => {
     console.log(finalResultTotal);
   }, [finalResultTotal]);
@@ -186,7 +201,11 @@ const QuizPage = ({
       )}
 
       <div className="buttonAnswerBottom">
-        <input type="button" value="submit" disabled={true}></input>
+        <input
+          type="button"
+          value="submit"
+          disabled={iscomplited ? false : true}
+        ></input>
       </div>
     </div>
   );
