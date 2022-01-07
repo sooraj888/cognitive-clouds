@@ -11,6 +11,7 @@ const QusionFour = ({
   console.log("data 101", data);
   let qusion = "Q" + language;
   let option = "optn" + language;
+  let answerArr = "ans" + language;
 
   const handleOnOPtionChange = (e: any) => {
     console.log(e.target.value);
@@ -40,6 +41,23 @@ const QusionFour = ({
       handleOnAnswerCompletion(data.id, true);
     } else {
       handleOnAnswerCompletion(data.id, false);
+    }
+
+    if (inputAnswer.length != data[answerArr].length) {
+      handleOnCarrectAnswer(data.id, false);
+    } else {
+      //   handleOnCarrectAnswer(data.id, true);
+      let isAnswerCorrect = true;
+      for (let i = 0; i < data[answerArr].length; i++) {
+        if (!inputAnswer.includes(data[answerArr][i])) {
+          isAnswerCorrect = false;
+        }
+      }
+      if (isAnswerCorrect) {
+        handleOnCarrectAnswer(data.id, true);
+      } else {
+        handleOnCarrectAnswer(data.id, false);
+      }
     }
   }, [inputAnswer]);
   return (
