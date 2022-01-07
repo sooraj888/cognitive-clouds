@@ -5,11 +5,13 @@ import QusionOne from "./QuesionComponents/QusionOne";
 import data from "./LanguageData";
 import QusionTwo from "./QuesionComponents/QusionTwo";
 import QusionThree from "./QuesionComponents/QusionThree";
+import QusionFour from "./QuesionComponents/QusionFour";
 
 const QuizPage = ({ selectedLaguage, data }: any) => {
   const [inputAnswer1, setInputAnswer1] = useState<any>("");
   const [inputAnswer2, setInputAnswer2] = useState<any>("");
   const [inputAnswer3, setInputAnswer3] = useState<any>("");
+  const [inputAnswer4, setInputAnswer4] = useState<any>([]);
 
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
   const arrOfQuesionVisibility: any = [];
@@ -134,7 +136,21 @@ const QuizPage = ({ selectedLaguage, data }: any) => {
       ) : (
         <></>
       )}
-      {arrOfManageQusion[3]?.visibility ? <div>quesio4</div> : <></>}
+      {arrOfManageQusion[3]?.visibility ? (
+        <div>
+          {" "}
+          <QusionFour
+            data={data[3]}
+            language={selectedLaguage}
+            handleOnAnswerCompletion={handleOnAnswerCompletion}
+            setInputAnswer={setInputAnswer4}
+            inputAnswer={inputAnswer4}
+            handleOnCarrectAnswer={handleOnCarrectAnswer}
+          ></QusionFour>
+        </div>
+      ) : (
+        <></>
+      )}
       {arrOfManageQusion[4]?.visibility ? <div>quesio5</div> : <></>}
     </div>
   );

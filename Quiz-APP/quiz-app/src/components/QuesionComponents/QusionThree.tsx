@@ -40,38 +40,6 @@ const QusionThree = ({
     <div>
       {data?.[qusion]}
       <br></br>
-      {/* <input
-        name="yesOrNO"
-        type="radio"
-        value={data[option][0]}
-        onChange={handleAnswerChange}
-        checked={inputAnswer == data[option][0] ? true : false}
-      ></input>
-      {data[option][0]}
-      <input
-        name="yesOrNO"
-        type="radio"
-        value={data[option][1]}
-        onChange={handleAnswerChange}
-        checked={inputAnswer == data[option][1] ? true : false}
-      ></input>
-      {data[option][1]}
-      <input
-        name="yesOrNO"
-        type="radio"
-        value={data[option][2]}
-        onChange={handleAnswerChange}
-        checked={inputAnswer == data[option][2] ? true : false}
-      ></input>
-      {data[option][2]}
-      <input
-        name="yesOrNO"
-        type="radio"
-        value={data[option][3]}
-        onChange={handleAnswerChange}
-        checked={inputAnswer == data[option][3] ? true : false}
-      ></input>
-      {data[option][3]} */}
 
       {console.log("data 75", data[option])}
       {data[option].map((item: any) => {
