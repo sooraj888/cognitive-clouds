@@ -81,9 +81,10 @@ const QuizPage = ({
     arrOfManageQusion.map((item: any) => {
       if (item.Ans) {
         countOfCarrecrAnswer += 1;
-        console.log("ans", item.Ans);
+        console.log("ans", countOfCarrecrAnswer);
       }
     });
+
     setFinalResultTotal(countOfCarrecrAnswer);
   }, [arrOfManageQusion]);
 
@@ -185,7 +186,7 @@ const QuizPage = ({
       )}
 
       <div className="buttonAnswerBottom">
-        <input type="button" value="submit" disabled></input>
+        <input type="button" value="submit" disabled={true}></input>
       </div>
     </div>
   );

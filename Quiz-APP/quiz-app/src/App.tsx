@@ -35,6 +35,10 @@ function App() {
       setIsFormFill(false);
     }
   }, [gender, selectedLaguage, inpuName]);
+
+  useEffect(() => {
+    console.log("ans app", finalResultTotal);
+  }, [finalResultTotal]);
   return (
     <BrowserRouter>
       <>APp</>

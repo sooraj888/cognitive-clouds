@@ -53,7 +53,7 @@ const QuestionFive = ({
       {data[quesion]}
       <button onClick={handleOnRefreshClickedOPtion}>refresh Quseion</button>
       {data[option].map((item: any) => {
-        console.log("item", item[0], item[1]);
+        // console.log("item", item[0], item[1]);
         count += 1;
         return (
           <div key={item[0]}>
