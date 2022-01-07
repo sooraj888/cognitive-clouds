@@ -46,12 +46,31 @@ const data = [
   },
   {
     id: "5",
-    QEnglish: "english q1 ?",
+    QEnglish: "english q4 ?",
     QKannada: "kannada 1 ?",
     QHindi: "hindhi",
-    ansEnglish: "crE",
-    ansKannada: "ansK",
-    ansHindi: "ansK",
+    ansEnglish: ["3", "2", "1", "4"],
+    ansKannada: ["3", "2", "1", "4"],
+    ansHindi: ["3", "2", "1", "4"],
+    optnKannada: [
+      ["6", "1"],
+      ["7", "2"],
+      ["8", "3"],
+      ["9", "4"],
+    ],
+
+    optnEnglish: [
+      ["6", "1"],
+      ["7", "2"],
+      ["8", "3"],
+      ["9", "4"],
+    ],
+    optnHindi: [
+      ["6", "1"],
+      ["7", "2"],
+      ["8", "3"],
+      ["9", "4"],
+    ],
   },
 ];
 export default data;

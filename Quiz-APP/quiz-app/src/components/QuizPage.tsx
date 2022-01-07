@@ -6,6 +6,7 @@ import data from "./LanguageData";
 import QusionTwo from "./QuesionComponents/QusionTwo";
 import QusionThree from "./QuesionComponents/QusionThree";
 import QusionFour from "./QuesionComponents/QusionFour";
+import QuestionFive from "./QuesionComponents/QuestionFive";
 
 const QuizPage = ({
   selectedLaguage,
@@ -17,6 +18,7 @@ const QuizPage = ({
   const [inputAnswer2, setInputAnswer2] = useState<any>("");
   const [inputAnswer3, setInputAnswer3] = useState<any>("");
   const [inputAnswer4, setInputAnswer4] = useState<any>([]);
+  const [inputAnswer5, setInputAnswer5] = useState<any>([]);
 
   const [arrOfManageQusion, setArrOfManageQusion] = useState<any>([]);
   const arrOfQuesionVisibility: any = [];
@@ -167,7 +169,24 @@ const QuizPage = ({
       ) : (
         <></>
       )}
-      {arrOfManageQusion[4]?.visibility ? <div>quesio5</div> : <></>}
+      {arrOfManageQusion[4]?.visibility ? (
+        <div>
+          <QuestionFive
+            data={data[4]}
+            language={selectedLaguage}
+            handleOnAnswerCompletion={handleOnAnswerCompletion}
+            setInputAnswer={setInputAnswer5}
+            inputAnswer={inputAnswer5}
+            handleOnCarrectAnswer={handleOnCarrectAnswer}
+          ></QuestionFive>
+        </div>
+      ) : (
+        <></>
+      )}
+
+      <div className="buttonAnswerBottom">
+        <input type="button" value="submit" disabled></input>
+      </div>
     </div>
   );
 };
