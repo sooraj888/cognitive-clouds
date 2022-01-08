@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import RefreshIcon from "@mui/icons-material/Refresh";
 //this component can be  reused for match the following qusion.
 
 const QuestionFive = ({
@@ -53,13 +53,15 @@ const QuestionFive = ({
   return (
     <div>
       {data[quesion]}
-      <button onClick={handleOnRefreshClickedOPtion}>refresh Quseion</button>
+      <button className="refresh" onClick={handleOnRefreshClickedOPtion}>
+        <RefreshIcon />
+      </button>
       {data[option].map((item: any) => {
         // console.log("item", item[0], item[1]);
         count += 1;
         return (
           <div key={item[0]}>
-            <span>{item[0]}</span>
+            <span className="spaceBtweenMatchs">{item[0]}</span>
             <span className="spaceBtweenMatchs"></span>
             <span className="mactchedvalue">
               {inputAnswer[count] != null ? inputAnswer[count] : ""}

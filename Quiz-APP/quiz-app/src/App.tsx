@@ -44,7 +44,6 @@ function App() {
   }, [finalResultTotal]);
   return (
     <BrowserRouter>
-      <>APp</>
       <Routes>
         <Route
           path="/"
@@ -75,7 +74,7 @@ function App() {
         <Route
           path="/result"
           element={
-            <div>
+            <div className="result">
               <div
                 style={{
                   width: 200,

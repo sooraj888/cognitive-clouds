@@ -47,7 +47,7 @@ const QusionThree = ({
       {data[option].map((item: any) => {
         count += 1;
         return (
-          <span key={item}>
+          <div key={item}>
             <input
               name="option"
               type="radio"
@@ -56,7 +56,7 @@ const QusionThree = ({
               checked={inputAnswer == item ? true : false}
             ></input>
             {item}
-          </span>
+          </div>
         );
       })}
     </div>

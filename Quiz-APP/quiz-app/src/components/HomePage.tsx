@@ -1,3 +1,4 @@
+import { style } from "@mui/system";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import s from "./HomePage.module.css";
@@ -13,7 +14,8 @@ const HomePage = ({
   inpuName,
 }: any) => {
   return (
-    <div>
+    <div className={s.inputHomePage}>
+      <h1>Quiz</h1>
       <form
         onSubmit={(e: any) => {
           e.preventDefault();
@@ -28,6 +30,7 @@ const HomePage = ({
           required
           className={s.a}
         ></input>
+        <br></br>
         <div>
           Select Gender :{" "}
           <select value={gender} onChange={handleOnRadioGenderSelect} required>

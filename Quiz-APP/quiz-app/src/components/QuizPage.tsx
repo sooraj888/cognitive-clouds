@@ -127,89 +127,92 @@ const QuizPage = ({
           );
         })}
       </div>
+      <div className={styles.qusions}>
+        <div className={styles.content}>
+          {arrOfManageQusion[0]?.visibility ? (
+            <div>
+              <QusionOne
+                data={data[0]}
+                language={selectedLaguage}
+                handleOnAnswerCompletion={handleOnAnswerCompletion}
+                setInputAnswer={setInputAnswer1}
+                inputAnswer={inputAnswer1}
+                handleOnCarrectAnswer={handleOnCarrectAnswer}
+              ></QusionOne>
+            </div>
+          ) : (
+            <></>
+          )}
+          {arrOfManageQusion[1]?.visibility ? (
+            <div>
+              <QusionTwo
+                data={data[1]}
+                language={selectedLaguage}
+                handleOnAnswerCompletion={handleOnAnswerCompletion}
+                setInputAnswer={setInputAnswer2}
+                inputAnswer={inputAnswer2}
+                handleOnCarrectAnswer={handleOnCarrectAnswer}
+              ></QusionTwo>
+            </div>
+          ) : (
+            <></>
+          )}
+          {arrOfManageQusion[2]?.visibility ? (
+            <div>
+              {" "}
+              <QusionThree
+                data={data[2]}
+                language={selectedLaguage}
+                handleOnAnswerCompletion={handleOnAnswerCompletion}
+                setInputAnswer={setInputAnswer3}
+                inputAnswer={inputAnswer3}
+                handleOnCarrectAnswer={handleOnCarrectAnswer}
+              ></QusionThree>
+            </div>
+          ) : (
+            <></>
+          )}
+          {arrOfManageQusion[3]?.visibility ? (
+            <div>
+              {" "}
+              <QusionFour
+                data={data[3]}
+                language={selectedLaguage}
+                handleOnAnswerCompletion={handleOnAnswerCompletion}
+                setInputAnswer={setInputAnswer4}
+                inputAnswer={inputAnswer4}
+                handleOnCarrectAnswer={handleOnCarrectAnswer}
+              ></QusionFour>
+            </div>
+          ) : (
+            <></>
+          )}
+          {arrOfManageQusion[4]?.visibility ? (
+            <div>
+              <QuestionFive
+                data={data[4]}
+                language={selectedLaguage}
+                handleOnAnswerCompletion={handleOnAnswerCompletion}
+                setInputAnswer={setInputAnswer5}
+                inputAnswer={inputAnswer5}
+                handleOnCarrectAnswer={handleOnCarrectAnswer}
+              ></QuestionFive>
+            </div>
+          ) : (
+            <></>
+          )}
 
-      {arrOfManageQusion[0]?.visibility ? (
-        <div>
-          <QusionOne
-            data={data[0]}
-            language={selectedLaguage}
-            handleOnAnswerCompletion={handleOnAnswerCompletion}
-            setInputAnswer={setInputAnswer1}
-            inputAnswer={inputAnswer1}
-            handleOnCarrectAnswer={handleOnCarrectAnswer}
-          ></QusionOne>
+          <div className="buttonAnswerBottom">
+            <Link to="/result">
+              {" "}
+              <input
+                type="button"
+                value="submit"
+                disabled={iscomplited ? false : true}
+              ></input>
+            </Link>
+          </div>
         </div>
-      ) : (
-        <></>
-      )}
-      {arrOfManageQusion[1]?.visibility ? (
-        <div>
-          <QusionTwo
-            data={data[1]}
-            language={selectedLaguage}
-            handleOnAnswerCompletion={handleOnAnswerCompletion}
-            setInputAnswer={setInputAnswer2}
-            inputAnswer={inputAnswer2}
-            handleOnCarrectAnswer={handleOnCarrectAnswer}
-          ></QusionTwo>
-        </div>
-      ) : (
-        <></>
-      )}
-      {arrOfManageQusion[2]?.visibility ? (
-        <div>
-          {" "}
-          <QusionThree
-            data={data[2]}
-            language={selectedLaguage}
-            handleOnAnswerCompletion={handleOnAnswerCompletion}
-            setInputAnswer={setInputAnswer3}
-            inputAnswer={inputAnswer3}
-            handleOnCarrectAnswer={handleOnCarrectAnswer}
-          ></QusionThree>
-        </div>
-      ) : (
-        <></>
-      )}
-      {arrOfManageQusion[3]?.visibility ? (
-        <div>
-          {" "}
-          <QusionFour
-            data={data[3]}
-            language={selectedLaguage}
-            handleOnAnswerCompletion={handleOnAnswerCompletion}
-            setInputAnswer={setInputAnswer4}
-            inputAnswer={inputAnswer4}
-            handleOnCarrectAnswer={handleOnCarrectAnswer}
-          ></QusionFour>
-        </div>
-      ) : (
-        <></>
-      )}
-      {arrOfManageQusion[4]?.visibility ? (
-        <div>
-          <QuestionFive
-            data={data[4]}
-            language={selectedLaguage}
-            handleOnAnswerCompletion={handleOnAnswerCompletion}
-            setInputAnswer={setInputAnswer5}
-            inputAnswer={inputAnswer5}
-            handleOnCarrectAnswer={handleOnCarrectAnswer}
-          ></QuestionFive>
-        </div>
-      ) : (
-        <></>
-      )}
-
-      <div className="buttonAnswerBottom">
-        <Link to="/result">
-          {" "}
-          <input
-            type="button"
-            value="submit"
-            disabled={iscomplited ? false : true}
-          ></input>
-        </Link>
       </div>
     </div>
   );

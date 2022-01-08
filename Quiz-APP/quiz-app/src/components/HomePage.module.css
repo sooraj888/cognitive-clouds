@@ -1,3 +1,10 @@
-.a {
-  background-color: red;
+.inputHomePage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+h1 {
+  color: purple;
+  font-size: 5rem;
 }

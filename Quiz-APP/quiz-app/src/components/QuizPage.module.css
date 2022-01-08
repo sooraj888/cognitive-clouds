@@ -19,3 +19,23 @@
   border-radius: 100%;
   padding: 20px 20px;
 }
+.qusions {
+  /* background-color: red; */
+
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  margin-top: 80px;
+
+  min-width: 600px;
+  min-height: 300px;
+}
+form {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
