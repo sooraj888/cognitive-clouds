@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` test on rendering  input HomePage by sending dummyprop  1`] = `
+<div
+  className="inputHomePage"
+>
+  <h1>
+    Quiz
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="a"
+      onChange={[Function]}
+      placeholder="Name"
+      required={true}
+      type="text"
+      value="sooraj"
+    />
+    <br />
+    <div>
+      Select Gender :
+       
+      <select
+        onChange={[Function]}
+        required={true}
+        value="Female"
+      >
+        <option
+          value="Male"
+        >
+          Male
+        </option>
+        <option
+          value="Female"
+        >
+          Female
+        </option>
+        <option
+          value="Others"
+        >
+          Others
+        </option>
+      </select>
+    </div>
+    Selcet Language:
+     
+    <select
+      onChange={[Function]}
+      required={true}
+      value="Kannada"
+    >
+      <option
+        value="English"
+      >
+        English
+      </option>
+      <option
+        value="Kannada"
+      >
+        Kannada
+      </option>
+      <option
+        value="Hindi"
+      >
+        Hindi
+      </option>
+    </select>
+    <br />
+    <a
+      href="/quizPage"
+      onClick={[Function]}
+    >
+      <input
+        disabled={true}
+        type="submit"
+        value="Submit"
+      />
+    </a>
+  </form>
+</div>
+`;
+
+exports[`testing on QuesionOne componet !--Fill in the blank type--!   rendering QuesionOne  1`] = `
+<div>
+  <br />
+  <input
+    className="AnsBox"
+    onChange={[Function]}
+    type="text"
+    value="28"
+  />
+</div>
+`;
