@@ -48,6 +48,7 @@ const QusionTwo = ({
         checked={inputAnswer == data[option][0] ? true : false}
       ></input>
       {data[option][0]}
+      <br></br>
       <input
         name="yesOrNO"
         type="radio"

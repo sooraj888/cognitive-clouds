@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { json } from "stream/consumers";
 
+//this component can be reused for fillin the blank quseion
+
 const QusionOne = ({
   data,
   language,

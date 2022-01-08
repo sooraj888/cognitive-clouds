@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+//this component can be  reused for match the following qusion.
+
 const QuestionFive = ({
   data,
   language,

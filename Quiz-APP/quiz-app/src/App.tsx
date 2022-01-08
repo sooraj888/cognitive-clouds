@@ -11,6 +11,7 @@ function App() {
   const [gender, setGender] = useState("Male");
   const [selectedLaguage, setSelectedLaguage] = useState("English");
   const [isFormFill, setIsFormFill] = useState(false);
+  const [calculatedPercentage, setCalculatedPercentage] = useState(0);
 
   const [finalResultTotal, setFinalResultTotal] = useState<any>(0);
 
@@ -38,6 +39,8 @@ function App() {
 
   useEffect(() => {
     console.log("ans app", finalResultTotal);
+    setCalculatedPercentage((finalResultTotal * 100) / 5);
+    console.log("p", calculatedPercentage);
   }, [finalResultTotal]);
   return (
     <BrowserRouter>
@@ -67,6 +70,30 @@ function App() {
               finalResultTotal={finalResultTotal}
               setFinalResultTotal={setFinalResultTotal}
             ></QuizPage>
+          }
+        ></Route>
+        <Route
+          path="/result"
+          element={
+            <div>
+              <div
+                style={{
+                  width: 200,
+                  height: 200,
+                  borderRadius: "50%",
+                  background: ` conic-gradient(rgb(71, 252, 0) 0% ${calculatedPercentage}%,red ${calculatedPercentage}% 100%)`,
+                }}
+              ></div>
+              <div>percentage : {calculatedPercentage}%</div>
+              <div>
+                <span className="greeenBox"></span>correct answer:{" "}
+                {finalResultTotal}
+              </div>
+              <div>
+                <span className="redBox"></span>wrong answer:
+                {5 - finalResultTotal}
+              </div>
+            </div>
           }
         ></Route>
       </Routes>

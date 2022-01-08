@@ -7,6 +7,7 @@ import QusionTwo from "./QuesionComponents/QusionTwo";
 import QusionThree from "./QuesionComponents/QusionThree";
 import QusionFour from "./QuesionComponents/QusionFour";
 import QuestionFive from "./QuesionComponents/QuestionFive";
+import { Link } from "react-router-dom";
 
 const QuizPage = ({
   selectedLaguage,
@@ -201,11 +202,14 @@ const QuizPage = ({
       )}
 
       <div className="buttonAnswerBottom">
-        <input
-          type="button"
-          value="submit"
-          disabled={iscomplited ? false : true}
-        ></input>
+        <Link to="/result">
+          {" "}
+          <input
+            type="button"
+            value="submit"
+            disabled={iscomplited ? false : true}
+          ></input>
+        </Link>
       </div>
     </div>
   );

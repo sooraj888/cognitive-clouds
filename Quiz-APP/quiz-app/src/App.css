@@ -56,3 +56,24 @@
   min-width: 200px;
   padding-right: 80px;
 }
+.wheel {
+  background-color: red;
+  background: conic-gradient(#ff5722 0% 35%, #ffeb3b 35% 60%, #2196f3 60% 100%);
+  color: rgb(71, 252, 0);
+  border-radius: 50%;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.greeenBox {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: rgb(71, 252, 0);
+}
+.redBox {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: rgb(252, 0, 0);
+}

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+//this component can be reused for multy select quesions.
+
 const QusionFour = ({
   data,
   language,

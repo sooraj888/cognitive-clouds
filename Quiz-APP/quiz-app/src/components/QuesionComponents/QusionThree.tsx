@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+//this only componentcan be used for (2nd  and 3 quesion ) multiple choice quesion
+
 const QusionThree = ({
   data,
   language,
