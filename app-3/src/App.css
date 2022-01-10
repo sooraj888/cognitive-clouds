@@ -4,3 +4,12 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+.listItems {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 200px;
+  min-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5px 10px;
+}
