@@ -1,0 +1,752 @@
+{
+  "hits": [
+    {
+      "created_at": "2018-02-07T22:22:28.000Z",
+      "title": "John Perry Barlow has died",
+      "url": "https://www.eff.org/deeplinks/2018/02/john-perry-barlow-internet-pioneer-1947-2018",
+      "author": "schoen",
+      "points": 1485,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 126,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1518042148,
+      "relevancy_score": 7944,
+      "_tags": ["story", "author_schoen", "story_16328546"],
+      "objectID": "16328546",
+      "_highlightResult": {
+        "title": {
+          "value": "John Perry <em>Bar</em>low has died",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.eff.org/deeplinks/2018/02/john-perry-<em>bar</em>low-internet-pioneer-1947-2018",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "schoen",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2010-09-21T22:40:57.000Z",
+      "title": "So A Blogger Walks Into A Bar… ",
+      "url": "http://techcrunch.com/2010/09/21/so-a-blogger-walks-into-a-bar/",
+      "author": "icey",
+      "points": 1098,
+      "story_text": "",
+      "comment_text": null,
+      "num_comments": 232,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1285108857,
+      "relevancy_score": 2770,
+      "_tags": ["story", "author_icey", "story_1714377"],
+      "objectID": "1714377",
+      "_highlightResult": {
+        "title": {
+          "value": "So A Blogger Walks Into A <em>Bar</em>… ",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "http://techcrunch.com/2010/09/21/so-a-blogger-walks-into-a-<em>bar</em>/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "icey",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "story_text": {
+          "value": "",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2019-04-27T22:39:16.000Z",
+      "title": "The inception bar: a new phishing method",
+      "url": "https://jameshfisher.com/2019/04/27/the-inception-bar-a-new-phishing-method/",
+      "author": "jamesfisher",
+      "points": 1046,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 230,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1556404756,
+      "relevancy_score": 8791,
+      "_tags": ["story", "author_jamesfisher", "story_19768072"],
+      "objectID": "19768072",
+      "_highlightResult": {
+        "title": {
+          "value": "The inception <em>bar</em>: a new phishing method",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://jameshfisher.com/2019/04/27/the-inception-<em>bar</em>-a-new-phishing-method/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "jamesfisher",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2012-02-18T18:17:00.000Z",
+      "title": "Every day at my job I helped people just barely survive",
+      "url": "http://www.metafilter.com/112698/California-Dreamin#4183210",
+      "author": "blatherard",
+      "points": 919,
+      "story_text": "",
+      "comment_text": null,
+      "num_comments": 318,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1329589020,
+      "relevancy_score": 3751,
+      "_tags": ["story", "author_blatherard", "story_3607217"],
+      "objectID": "3607217",
+      "_highlightResult": {
+        "title": {
+          "value": "Every day at my job I helped people just <em>bar</em>ely survive",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "http://www.metafilter.com/112698/California-Dreamin#4183210",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "blatherard",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "story_text": {
+          "value": "",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2020-06-14T08:50:43.000Z",
+      "title": "Google adds experimental setting to hide full URLs in Chrome 85 address bar",
+      "url": "https://www.androidpolice.com/2020/06/12/google-resumes-its-senseless-attack-on-the-url-bar-hides-full-addresses-on-chrome-canary/",
+      "author": "vezycash",
+      "points": 869,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 698,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1592124643,
+      "_tags": ["story", "author_vezycash", "story_23516088"],
+      "objectID": "23516088",
+      "_highlightResult": {
+        "title": {
+          "value": "Google adds experimental setting to hide full URLs in Chrome 85 address <em>bar</em>",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.androidpolice.com/2020/06/12/google-resumes-its-senseless-attack-on-the-url-<em>bar</em>-hides-full-addresses-on-chrome-canary/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "vezycash",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2019-01-27T18:07:59.000Z",
+      "title": "KABOOM in 180 lines of bare C++",
+      "url": "https://github.com/ssloy/tinykaboom/wiki",
+      "author": "haqreu",
+      "points": 854,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 63,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1548612479,
+      "relevancy_score": 8616,
+      "_tags": ["story", "author_haqreu", "story_19012872"],
+      "objectID": "19012872",
+      "_highlightResult": {
+        "title": {
+          "value": "KABOOM in 180 lines of <em>bar</em>e C++",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://github.com/ssloy/tinykaboom/wiki",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "haqreu",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2020-09-27T11:53:41.000Z",
+      "title": "foo@bar.com",
+      "url": "https://www.bar.com/",
+      "author": "diggan",
+      "points": 852,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 281,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1601207621,
+      "_tags": ["story", "author_diggan", "story_24605949"],
+      "objectID": "24605949",
+      "_highlightResult": {
+        "title": {
+          "value": "foo@<em>bar</em>.com",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.<em>bar</em>.com/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "diggan",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2018-03-16T16:47:12.000Z",
+      "title": "China to bar people with bad 'social credit' from planes, trains",
+      "url": "https://www.reuters.com/article/us-china-credit/china-to-bar-people-with-bad-social-credit-from-planes-trains-idUSKCN1GS10S",
+      "author": "samaysharma",
+      "points": 827,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 562,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1521218832,
+      "relevancy_score": 8011,
+      "_tags": ["story", "author_samaysharma", "story_16601883"],
+      "objectID": "16601883",
+      "_highlightResult": {
+        "title": {
+          "value": "China to <em>bar</em> people with bad 'social credit' from planes, trains",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.reuters.com/article/us-china-credit/china-to-<em>bar</em>-people-with-bad-social-credit-from-planes-trains-idUSKCN1GS10S",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "samaysharma",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2020-08-14T12:26:59.000Z",
+      "title": "Google resumes its attack on the URL bar, hides full addresses on Chrome 86",
+      "url": "https://www.androidpolice.com/2020/08/13/google-resumes-its-senseless-attack-on-the-url-bar-hides-full-addresses-on-chrome-canary/",
+      "author": "atriix",
+      "points": 827,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 476,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1597408019,
+      "_tags": ["story", "author_atriix", "story_24156986"],
+      "objectID": "24156986",
+      "_highlightResult": {
+        "title": {
+          "value": "Google resumes its attack on the URL <em>bar</em>, hides full addresses on Chrome 86",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.androidpolice.com/2020/08/13/google-resumes-its-senseless-attack-on-the-url-<em>bar</em>-hides-full-addresses-on-chrome-canary/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "atriix",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2021-02-08T04:36:58.000Z",
+      "title": "Barcode scanner app on Google Play infects 10M users with one update",
+      "url": "https://blog.malwarebytes.com/android/2021/02/barcode-scanner-app-on-google-play-infects-10-million-users-with-one-update/",
+      "author": "decrypt",
+      "points": 819,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 442,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1612759018,
+      "_tags": ["story", "author_decrypt", "story_26060839"],
+      "objectID": "26060839",
+      "_highlightResult": {
+        "title": {
+          "value": "<em>Bar</em>code scanner app on Google Play infects 10M users with one update",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://blog.malwarebytes.com/android/2021/02/<em>bar</em>code-scanner-app-on-google-play-infects-10-million-users-with-one-update/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "decrypt",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2020-11-10T12:43:17.000Z",
+      "title": "I sold Baremetrics",
+      "url": "https://baremetrics.com/blog/i-sold-baremetrics",
+      "author": "anttiai",
+      "points": 818,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 498,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1605012197,
+      "_tags": ["story", "author_anttiai", "story_25045325"],
+      "objectID": "25045325",
+      "_highlightResult": {
+        "title": {
+          "value": "I sold <em>Bar</em>emetrics",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://<em>bar</em>emetrics.com/blog/i-sold-<em>bar</em>emetrics",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "anttiai",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2016-02-13T13:01:47.000Z",
+      "title": "Sci-Hub: Removing barriers in the way of science",
+      "url": "http://sci-hub.io/",
+      "author": "kasbah",
+      "points": 760,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 209,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1455368507,
+      "relevancy_score": 6546,
+      "_tags": ["story", "author_kasbah", "story_11093779"],
+      "objectID": "11093779",
+      "_highlightResult": {
+        "title": {
+          "value": "Sci-Hub: Removing <em>bar</em>riers in the way of science",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "http://sci-hub.io/",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "kasbah",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2021-10-07T07:48:47.000Z",
+      "title": "Mozilla to put ads in Firefox address bar suggestions",
+      "url": "https://support.mozilla.org/en-US/kb/navigate-web-faster-firefox-suggest",
+      "author": "mikro2nd",
+      "points": 748,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 690,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1633592927,
+      "_tags": ["story", "author_mikro2nd", "story_28783381"],
+      "objectID": "28783381",
+      "_highlightResult": {
+        "title": {
+          "value": "Mozilla to put ads in Firefox address <em>bar</em> suggestions",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://support.mozilla.org/en-US/kb/navigate-web-faster-firefox-suggest",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "mikro2nd",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2020-10-04T12:59:22.000Z",
+      "title": "French bar owners arrested for offering free WiFi but not keeping logs",
+      "url": "https://www.privateinternetaccess.com/blog/french-bar-owners-arrested-for-offering-free-wifi-but-not-keeping-logs/",
+      "author": "seigando",
+      "points": 714,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 330,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1601816362,
+      "_tags": ["story", "author_seigando", "story_24678702"],
+      "objectID": "24678702",
+      "_highlightResult": {
+        "title": {
+          "value": "French <em>bar</em> owners arrested for offering free WiFi but not keeping logs",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.privateinternetaccess.com/blog/french-<em>bar</em>-owners-arrested-for-offering-free-wifi-but-not-keeping-logs/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "seigando",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2017-02-25T16:38:41.000Z",
+      "title": "Machine Learning from scratch: Bare bones implementations in Python",
+      "url": "https://github.com/eriklindernoren/ML-From-Scratch",
+      "author": "eriklindernoren",
+      "points": 694,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 63,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1488040721,
+      "relevancy_score": 7272,
+      "_tags": ["story", "author_eriklindernoren", "story_13732288"],
+      "objectID": "13732288",
+      "_highlightResult": {
+        "title": {
+          "value": "Machine Learning from scratch: <em>Bar</em>e bones implementations in Python",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://github.com/eriklindernoren/ML-From-Scratch",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "eriklindernoren",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2018-04-04T17:21:32.000Z",
+      "title": "Making the Touch Bar useful by abandoning Apple guidelines",
+      "url": "http://vas3k.com/blog/touchbar/",
+      "author": "sneks",
+      "points": 677,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 460,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1522862492,
+      "relevancy_score": 8052,
+      "_tags": ["story", "author_sneks", "story_16756863"],
+      "objectID": "16756863",
+      "_highlightResult": {
+        "title": {
+          "value": "Making the Touch <em>Bar</em> useful by abandoning Apple guidelines",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "http://vas3k.com/blog/touchbar/",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "sneks",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2017-02-24T19:31:58.000Z",
+      "title": "White House Bars NYT, CNN, and Politico from Briefing",
+      "url": "https://www.nytimes.com/2017/02/24/us/politics/white-house-sean-spicer-briefing.html?smprod=nytcore-iphone&smid=nytcore-iphone-share",
+      "author": "ComputerGuru",
+      "points": 660,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 384,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1487964718,
+      "relevancy_score": 7272,
+      "_tags": ["story", "author_ComputerGuru", "story_13726886"],
+      "objectID": "13726886",
+      "_highlightResult": {
+        "title": {
+          "value": "White House <em>Bar</em>s NYT, CNN, and Politico from Briefing",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.nytimes.com/2017/02/24/us/politics/white-house-sean-spicer-briefing.html?smprod=nytcore-iphone&smid=nytcore-iphone-share",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "ComputerGuru",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2021-03-23T15:03:15.000Z",
+      "title": "Chrome’s address bar will use https:// by default",
+      "url": "https://blog.chromium.org/2021/03/a-safer-default-for-navigation-https.html",
+      "author": "feross",
+      "points": 659,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 444,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1616511795,
+      "_tags": ["story", "author_feross", "story_26555873"],
+      "objectID": "26555873",
+      "_highlightResult": {
+        "title": {
+          "value": "Chrome’s address <em>bar</em> will use https:// by default",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://blog.chromium.org/2021/03/a-safer-default-for-navigation-https.html",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "author": {
+          "value": "feross",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2020-01-12T15:27:50.000Z",
+      "title": "Low unemployment isn’t worth much if the jobs barely pay",
+      "url": "https://www.brookings.edu/blog/the-avenue/2020/01/08/low-unemployment-isnt-worth-much-if-the-jobs-barely-pay/",
+      "author": "weare138",
+      "points": 646,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 654,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1578842870,
+      "_tags": ["story", "author_weare138", "story_22026667"],
+      "objectID": "22026667",
+      "_highlightResult": {
+        "title": {
+          "value": "Low unemployment isn’t worth much if the jobs <em>bar</em>ely pay",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.brookings.edu/blog/the-avenue/2020/01/08/low-unemployment-isnt-worth-much-if-the-jobs-<em>bar</em>ely-pay/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "weare138",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    },
+    {
+      "created_at": "2013-11-16T02:52:01.000Z",
+      "title": "A living death: Sentenced to die behind bars for what?",
+      "url": "https://www.aclu.org/living-death-sentenced-die-behind-bars-what",
+      "author": "subsystem",
+      "points": 639,
+      "story_text": "",
+      "comment_text": null,
+      "num_comments": 498,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1384570321,
+      "relevancy_score": 4974,
+      "_tags": ["story", "author_subsystem", "story_6743358"],
+      "objectID": "6743358",
+      "_highlightResult": {
+        "title": {
+          "value": "A living death: Sentenced to die behind <em>bar</em>s for what?",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "url": {
+          "value": "https://www.aclu.org/living-death-sentenced-die-behind-<em>bar</em>s-what",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": ["bar"]
+        },
+        "author": {
+          "value": "subsystem",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "story_text": {
+          "value": "",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }
+  ],
+  "nbHits": 406539,
+  "page": 0,
+  "nbPages": 50,
+  "hitsPerPage": 20,
+  "exhaustiveNbHits": false,
+  "exhaustiveTypo": true,
+  "query": "bar",
+  "params": "advancedSyntax=true&analytics=true&analyticsTags=backend&page=0&query=bar",
+  "renderingContent": {},
+  "processingTimeMS": 4
+}
