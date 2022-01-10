@@ -20,7 +20,7 @@ function App() {
         setPostData(rawPostData);
         setCountPost(rawCount + 1);
       });
-    if (rawCount >= 1) {
+    if (rawCount >= 49) {
       clearInterval(myInterval);
     }
   };
