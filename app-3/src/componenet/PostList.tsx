@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState, memo } from "react";
 import logo from "./logo.svg";
 
 import Pagination from "@mui/material/Pagination";
@@ -45,9 +45,9 @@ const PostList = ({
     handleUpdateData();
     myInterval = setInterval(handleUpdateData, 10000);
   }, []);
-  useEffect(() => {
-    console.log("countPost", countPost);
-  }, [countPost]);
+  // useEffect(() => {
+  //   console.log("countPost", countPost);
+  // }, [countPost]);
 
   return (
     <div className="App">
@@ -74,7 +74,9 @@ const PostList = ({
                   <span className="listItems">{item.author} </span>
                   <span className="listItems">{item?.created_at}</span>
                   <span className="listItems">
-                    <Link to={"/" + item?.objectID}>Select</Link>
+                    <nav>
+                      <Link to={"/" + item?.objectID}>Select</Link>
+                    </nav>
                   </span>
                 </div>
               );
