@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState, memo } from "react";
 import logo from "./logo.svg";
 
 import Pagination from "@mui/material/Pagination";
-import { Routes, Route, Link } from "react-router-dom";
-import { color } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const PostList = ({
   countPost,
@@ -12,43 +11,8 @@ const PostList = ({
   setPostData,
   selectedPost,
   setSelectedPost,
+  handleOnPaginationChange,
 }: any) => {
-  let rawCount: number = -1;
-  let rawPostData: any = [];
-  let myInterval: any;
-  const handleUpdateData = () => {
-    rawCount = rawCount + 1;
-    fetch(`http://hn.algolia.com/api/v1/search?query=bar&page=${rawCount}`)
-      .then((rawData: any) => rawData.json())
-      .then((data: any) => {
-        console.log(data);
-        rawPostData = [...rawPostData, data?.hits];
-        setPostData(rawPostData);
-        setCountPost(rawCount + 1);
-      });
-    if (rawCount >= 1) {
-      clearInterval(myInterval);
-    }
-  };
-  const handleOnPaginationChange = (e: any, value: any) => {
-    console.log("pagination change", value);
-    setSelectedPost(value - 1);
-  };
-
-  const handleSelectButton = (rawJson: any, selectdPostNuber: any) => {
-    console.log("rawJson", rawJson);
-    window.open(
-      `http://hn.algolia.com/api/v1/search?query=bar&page=${selectdPostNuber}`
-    );
-  };
-  useEffect(() => {
-    handleUpdateData();
-    myInterval = setInterval(handleUpdateData, 10000);
-  }, []);
-  // useEffect(() => {
-  //   console.log("countPost", countPost);
-  // }, [countPost]);
-
   return (
     <div className="App">
       <h1 className="AppName">List</h1>
@@ -74,9 +38,7 @@ const PostList = ({
                   <span className="listItems">{item.author} </span>
                   <span className="listItems">{item?.created_at}</span>
                   <span className="listItems">
-                    <nav>
-                      <Link to={"/" + item?.objectID}>Select</Link>
-                    </nav>
+                    <Link to={"/" + item?.objectID}>Select</Link>
                   </span>
                 </div>
               );
@@ -90,6 +52,7 @@ const PostList = ({
           count={countPost || 0}
           color="primary"
           onChange={handleOnPaginationChange}
+          page={selectedPost + 1}
         />
       </div>
     </div>
