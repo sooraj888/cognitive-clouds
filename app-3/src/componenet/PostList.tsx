@@ -6,11 +6,8 @@ import { Link } from "react-router-dom";
 
 const PostList = ({
   countPost,
-  setCountPost,
   postData,
-  setPostData,
   selectedPost,
-  setSelectedPost,
   handleOnPaginationChange,
 }: any) => {
   return (
@@ -29,6 +26,7 @@ const PostList = ({
         {postData && postData?.[selectedPost]
           ? postData?.[selectedPost].map((item: any) => {
               // console.log("item inside post data", item);
+
               return (
                 <div key={item?.objectID} className="listItem">
                   <span className="listItems">{item?.title}</span>

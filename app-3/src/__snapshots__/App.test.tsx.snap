@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` PostList  renders a snapshot  1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <h1
+      class="AppName"
+    >
+      List
+    </h1>
+    <div
+      class="list"
+    >
+      <div
+        class="listHead"
+      >
+        <span
+          class="listTitle"
+        >
+           Title 
+        </span>
+        <span
+          class="listTitle"
+        >
+          URL
+        </span>
+        <span
+          class="listTitle"
+        >
+          Author
+        </span>
+        <span
+          class="listTitle"
+        >
+          Created-At
+        </span>
+        <span
+          class="listTitle"
+        />
+      </div>
+      <div
+        class="listItem"
+      >
+        <span
+          class="listItems"
+        >
+          Google
+        </span>
+        <a
+          class="listItems"
+          href="http://google.com"
+        >
+          http://google.com
+        </a>
+        <span
+          class="listItems"
+        >
+          Jimmy
+           
+        </span>
+        <span
+          class="listItems"
+        >
+          24-44-33
+        </span>
+        <span
+          class="listItems"
+        >
+          <a
+            href="/1"
+          >
+            Select
+          </a>
+        </span>
+      </div>
+      <div
+        class="listItem"
+      >
+        <span
+          class="listItems"
+        >
+          Microsoft
+        </span>
+        <a
+          class="listItems"
+          href="http://microsoft.com"
+        >
+          http://microsoft.com
+        </a>
+        <span
+          class="listItems"
+        >
+          Max
+           
+        </span>
+        <span
+          class="listItems"
+        >
+          24-445-33
+        </span>
+        <span
+          class="listItems"
+        >
+          <a
+            href="/2"
+          >
+            Select
+          </a>
+        </span>
+      </div>
+    </div>
+    <div
+      class="paginationStyle"
+    >
+      <nav
+        aria-label="pagination navigation"
+        class="MuiPagination-root MuiPagination-outlined css-1oj2twp-MuiPagination-root"
+      >
+        <ul
+          class="MuiPagination-ul css-wjh20t-MuiPagination-ul"
+        >
+          <li>
+            <button
+              aria-label="Go to previous page"
+              class="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-rounded MuiPaginationItem-outlinedPrimary Mui-disabled MuiPaginationItem-previousNext css-r93niq-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled=""
+              tabindex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                data-testid="NavigateBeforeIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button
+              aria-current="true"
+              aria-label="page 1"
+              class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-rounded MuiPaginationItem-outlinedPrimary Mui-selected MuiPaginationItem-page css-r93niq-MuiButtonBase-root-MuiPaginationItem-root"
+              tabindex="0"
+              type="button"
+            >
+              1
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to page 2"
+              class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-rounded MuiPaginationItem-outlinedPrimary MuiPaginationItem-page css-r93niq-MuiButtonBase-root-MuiPaginationItem-root"
+              tabindex="0"
+              type="button"
+            >
+              2
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to next page"
+              class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-rounded MuiPaginationItem-outlinedPrimary MuiPaginationItem-previousNext css-r93niq-MuiButtonBase-root-MuiPaginationItem-root"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                data-testid="NavigateNextIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+`;

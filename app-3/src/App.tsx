@@ -48,11 +48,8 @@ function App() {
             element={
               <PostList
                 countPost={countPost}
-                setCountPost={setCountPost}
                 postData={postData}
-                setPostData={setPostData}
                 selectedPost={selectedPost}
-                setSelectedPost={setSelectedPost}
                 handleOnPaginationChange={handleOnPaginationChange}
               ></PostList>
             }
